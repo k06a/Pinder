@@ -8,6 +8,7 @@
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 
 #import "PinderServer.h"
@@ -44,6 +45,8 @@
     
     [PinderServer sharedServerWithDelegate:self];
 
+    [MagicalRecord setupCoreDataStack];
+    
     return YES;
 }
 

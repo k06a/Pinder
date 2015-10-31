@@ -127,8 +127,10 @@
 {
     for (NSInteger i = 0; i < self.views.count; i++) {
         UIView *view = self.views[i];
-        if (![self.exceptViews containsObject:view])
+        if (![self.exceptViews containsObject:view]) {
             view.transform = [self originTransformForViewAtIndex:i progress:self.progress];
+            view.alpha = 1.0*(self.views.count-i)/self.views.count + self.progress/self.views.count;
+        }
     }
 }
 
@@ -171,6 +173,7 @@
             if ([self.tinderDelegate respondsToSelector:@selector(tinderView:willDisplayItem:atIndex:)])
                 [self.tinderDelegate tinderView:self willDisplayItem:self.reusableView atIndex:self.globalIndex];
             [self insertSubview:self.reusableView atIndex:0];
+            self.reusableView.alpha = 0.1;
             self.reusableView.transform = [self originTransformForViewAtIndex:self.views.count-1];
         }
     }

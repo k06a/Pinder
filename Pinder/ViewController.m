@@ -30,7 +30,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         self.pinderView.count = 3;
-        self.pinderView.offset = 8;
+        self.pinderView.offset = 12;
     });
 }
 

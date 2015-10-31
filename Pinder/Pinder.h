@@ -11,5 +11,6 @@
 #import <FastEasyMapping/FastEasyMapping.h>
 
 #import "User.h"
+#import "Filter.h"
 
 
