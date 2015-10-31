@@ -30,6 +30,11 @@
 		25BBFDD41BE5533100D42E90 /* Filter+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDD11BE5533100D42E90 /* Filter+CoreDataProperties.m */; };
 		25BBFDD51BE5533100D42E90 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDD31BE5533100D42E90 /* Filter.m */; };
 		25BBFDD81BE55A9200D42E90 /* NSString+StringWithCapitalizedFirstCharOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDD71BE55A9200D42E90 /* NSString+StringWithCapitalizedFirstCharOnly.m */; };
+		25BBFDDB1BE566ED00D42E90 /* AbstractSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDDA1BE566ED00D42E90 /* AbstractSettingsViewController.m */; };
+		25BBFDE41BE56A7A00D42E90 /* Country+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDDD1BE56A7A00D42E90 /* Country+CoreDataProperties.m */; };
+		25BBFDE51BE56A7A00D42E90 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDDF1BE56A7A00D42E90 /* Country.m */; };
+		25BBFDE61BE56A7A00D42E90 /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDE11BE56A7A00D42E90 /* City+CoreDataProperties.m */; };
+		25BBFDE71BE56A7A00D42E90 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDE31BE56A7A00D42E90 /* City.m */; };
 		4713C72CDC4CEAF9BB0DAD41 /* libPods-Pinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F62A42D2EF09033BAB47671 /* libPods-Pinder.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +82,16 @@
 		25BBFDD31BE5533100D42E90 /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
 		25BBFDD61BE55A9200D42E90 /* NSString+StringWithCapitalizedFirstCharOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringWithCapitalizedFirstCharOnly.h"; sourceTree = "<group>"; };
 		25BBFDD71BE55A9200D42E90 /* NSString+StringWithCapitalizedFirstCharOnly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringWithCapitalizedFirstCharOnly.m"; sourceTree = "<group>"; };
+		25BBFDD91BE566ED00D42E90 /* AbstractSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractSettingsViewController.h; sourceTree = "<group>"; };
+		25BBFDDA1BE566ED00D42E90 /* AbstractSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractSettingsViewController.m; sourceTree = "<group>"; };
+		25BBFDDC1BE56A7A00D42E90 /* Country+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Country+CoreDataProperties.h"; sourceTree = "<group>"; };
+		25BBFDDD1BE56A7A00D42E90 /* Country+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Country+CoreDataProperties.m"; sourceTree = "<group>"; };
+		25BBFDDE1BE56A7A00D42E90 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		25BBFDDF1BE56A7A00D42E90 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		25BBFDE01BE56A7A00D42E90 /* City+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataProperties.h"; sourceTree = "<group>"; };
+		25BBFDE11BE56A7A00D42E90 /* City+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+CoreDataProperties.m"; sourceTree = "<group>"; };
+		25BBFDE21BE56A7A00D42E90 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		25BBFDE31BE56A7A00D42E90 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		7956AC93ADA724A4534323B0 /* Pods-Pinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinder/Pods-Pinder.release.xcconfig"; sourceTree = "<group>"; };
 		7F62A42D2EF09033BAB47671 /* libPods-Pinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A52EEC760CE62451228172 /* Pods-Pinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinder/Pods-Pinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +124,14 @@
 				25BBFDD11BE5533100D42E90 /* Filter+CoreDataProperties.m */,
 				25BBFDD21BE5533100D42E90 /* Filter.h */,
 				25BBFDD31BE5533100D42E90 /* Filter.m */,
+				25BBFDDC1BE56A7A00D42E90 /* Country+CoreDataProperties.h */,
+				25BBFDDD1BE56A7A00D42E90 /* Country+CoreDataProperties.m */,
+				25BBFDDE1BE56A7A00D42E90 /* Country.h */,
+				25BBFDDF1BE56A7A00D42E90 /* Country.m */,
+				25BBFDE01BE56A7A00D42E90 /* City+CoreDataProperties.h */,
+				25BBFDE11BE56A7A00D42E90 /* City+CoreDataProperties.m */,
+				25BBFDE21BE56A7A00D42E90 /* City.h */,
+				25BBFDE31BE56A7A00D42E90 /* City.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -179,6 +202,8 @@
 			children = (
 				256C00131BE5237B0062D468 /* SettingsViewController.h */,
 				256C00141BE5237B0062D468 /* SettingsViewController.m */,
+				25BBFDD91BE566ED00D42E90 /* AbstractSettingsViewController.h */,
+				25BBFDDA1BE566ED00D42E90 /* AbstractSettingsViewController.m */,
 				25BBFDBB1BE53A6400D42E90 /* FirstSettingsViewController.h */,
 				25BBFDBC1BE53A6400D42E90 /* FirstSettingsViewController.m */,
 				25BBFDBE1BE53B1200D42E90 /* SecondSettingsViewController.h */,
@@ -371,12 +396,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25BBFDE61BE56A7A00D42E90 /* City+CoreDataProperties.m in Sources */,
 				256C000F1BE515ED0062D468 /* User.m in Sources */,
+				25BBFDE71BE56A7A00D42E90 /* City.m in Sources */,
 				25BBFDC61BE5408200D42E90 /* ABMultiValuePickerController.m in Sources */,
 				25BBFDD41BE5533100D42E90 /* Filter+CoreDataProperties.m in Sources */,
 				256CFFFE1BE4F5A00062D468 /* PinderServer.m in Sources */,
 				256CFFE51BE4AEBD0062D468 /* ViewController.m in Sources */,
+				25BBFDE41BE56A7A00D42E90 /* Country+CoreDataProperties.m in Sources */,
 				256C00011BE4FD650062D468 /* LoginViewController.m in Sources */,
+				25BBFDDB1BE566ED00D42E90 /* AbstractSettingsViewController.m in Sources */,
+				25BBFDE51BE56A7A00D42E90 /* Country.m in Sources */,
 				256C000E1BE515ED0062D468 /* User+CoreDataProperties.m in Sources */,
 				25BBFDD51BE5533100D42E90 /* Filter.m in Sources */,
 				256C00051BE507BC0062D468 /* NSMutableURLRequest+Parameters.m in Sources */,

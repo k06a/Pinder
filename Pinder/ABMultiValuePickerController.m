@@ -32,6 +32,12 @@
     [self updateAllControllers];
 }
 
+- (void)setAllowNoneSelection:(BOOL)allowNoneSelection
+{
+    _allowNoneSelection = allowNoneSelection;
+    [self updateAllControllers];
+}
+
 - (void)setCompletion:(void (^)())completion
 {
     _completion = [completion copy];

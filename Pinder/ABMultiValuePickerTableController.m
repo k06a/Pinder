@@ -68,8 +68,10 @@
             [self setupCellAtIndexPath:ip];
         }
     } else if (self.allowMultipleSelection) {
-        [self.selectedItems removeObject:self.items[indexPath.row]];
-        [self setupCellAtIndexPath:indexPath];
+        if (self.allowNoneSelection || self.selectedItems.count > 1) {
+            [self.selectedItems removeObject:self.items[indexPath.row]];
+            [self setupCellAtIndexPath:indexPath];
+        }
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

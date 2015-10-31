@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AbstractSettingsViewController.h"
 
-@interface ThirdSettingsViewController : UITableViewController
+@interface ThirdSettingsViewController : AbstractSettingsViewController
 
 @end

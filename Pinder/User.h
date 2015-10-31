@@ -11,12 +11,21 @@
 
 @class FEMMapping;
 
+enum SexEnum
+{
+    SexWoman = 1,
+    SexMan = 2,
+};
+
+//
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface User : NSManagedObject
 
 - (FEMMapping *)mapping;
 + (int64_t)nextSortId;
++ (instancetype)me;
 
 @end
 

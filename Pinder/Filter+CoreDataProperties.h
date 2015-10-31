@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Filter (CoreDataProperties)
 
+@property (nullable, nonatomic, retain) NSNumber *country_index;
 @property (nullable, nonatomic, retain) NSNumber *sex_m;
 @property (nullable, nonatomic, retain) NSNumber *sex_w;
 

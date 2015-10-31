@@ -7,10 +7,7 @@
 //
 
 #import <MSRangeSlider/MSRangeSlider.h>
-#import "NSString+StringWithCapitalizedFirstCharOnly.h"
-#import "ABMultiValuePickerController.h"
 
-#import "Pinder.h"
 #import "FirstSettingsViewController.h"
 
 @interface FirstSettingsViewController ()
@@ -18,20 +15,34 @@
 @property (nonatomic, weak) IBOutlet UILabel *agesRangeLabel;
 @property (nonatomic, weak) IBOutlet MSRangeSlider *rangeSlider;
 
-@property (nonatomic, strong) Filter *filter;
-
 @end
 
 @implementation FirstSettingsViewController
 
-- (Filter *)filter
+- (NSDictionary *)items
 {
-    if (_filter == nil) {
-        _filter = [Filter MR_findFirst];
-        if (_filter == nil)
-            _filter = [Filter MR_createEntity];
+    if (super.items == nil) {
+        super.items = @{@"sex":@{@"items":@[@"парни",@"девушки"],
+                                 @"keys":@[@"sex_m",@"sex_w"],
+                                 @"title":@"Меня интересуют",
+                                 @"multiple":@YES,
+                                 @"none":@NO,
+                                 @"only":@YES},
+                        @"ctr":@{@"items":[self.countries valueForKey:@"title"],
+                                 @"key":@"country_index",
+                                 @"title":@"Проживают в стране",
+                                 @"multiple":@NO,
+                                 @"none":@NO,
+                                 @"only":@NO},
+                        @"cty":@{@"items":[self.cities valueForKey:@"title"],
+                                 @"key":@"city_index",
+                                 @"title":@"Проживают в стране",
+                                 @"multiple":@NO,
+                                 @"none":@NO,
+                                 @"only":@NO},
+                        };
     }
-    return _filter;
+    return super.items;
 }
 
 - (void)setRangeSlider:(MSRangeSlider *)rangeSlider
@@ -69,15 +80,7 @@
 - (void)setupCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 1) {
-        cell.detailTextLabel.text = ^{
-            if (self.filter.sex_m.boolValue && self.filter.sex_w.boolValue)
-                return @"Парни и девушки";
-            if (self.filter.sex_m.boolValue)
-                return @"Тольно парни";
-            if (self.filter.sex_w.boolValue)
-                return @"Только девушки";
-            return @"Не важно";
-        }();
+        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"sex"]];
     }
 }
 
@@ -87,26 +90,19 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    ABMultiValuePickerController *controller = [[ABMultiValuePickerController alloc] init];
-    controller.view.tintColor = self.view.tintColor;
+    NSDictionary *item = ^id{
+        if (indexPath.row == 1)
+            return self.items[@"sex"];
+        if (indexPath.row == 2)
+            return self.items[@"ctr"];
+        return nil;
+    }();
     
-    if (indexPath.row == 1)
+    if (item)
     {
-        controller.title = @"Меня интересуют";
-        controller.items = @[@"парни",@"девушки"];
-        if (self.filter.sex_m.boolValue)
-            [controller.selectedItems addObject:controller.items[0]];
-        if (self.filter.sex_w.boolValue)
-            [controller.selectedItems addObject:controller.items[1]];
-        controller.allowMultipleSelection = YES;
-        
-        __weak typeof(controller) weakController = controller;
-        controller.completion = ^(){
-            self.filter.sex_m = @([weakController.selectedItems containsObject:weakController.items[0]]);
-            self.filter.sex_w = @([weakController.selectedItems containsObject:weakController.items[1]]);
+        [self presentChoiseControllerForItem:item completion:^{
             [self setupCell:cell forIndexPath:indexPath];
-        };
-        [self presentViewController:controller animated:YES completion:nil];
+        }];
     }
 }
 

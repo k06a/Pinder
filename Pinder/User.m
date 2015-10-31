@@ -8,6 +8,7 @@
 
 #import <MagicalRecord/MagicalRecord.h>
 #import <FastEasyMapping/FastEasyMapping.h>
+#import "PinderServer.h"
 #import "User.h"
 
 @implementation User
@@ -28,6 +29,11 @@
 + (int64_t)nextSortId
 {
     return [[User MR_findFirstOrderedByAttribute:@"sort_id" ascending:NO].sort_id longLongValue] + 1;
+}
+
++ (instancetype)me
+{
+    return [User MR_findFirstByAttribute:@"identifier" withValue:@([[PinderServer sharedServer].user_id longLongValue])];
 }
 
 @end

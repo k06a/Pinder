@@ -12,5 +12,5 @@
 
 #import "User.h"
 #import "Filter.h"
-
-
+#import "Country.h"
+#import "City.h"
