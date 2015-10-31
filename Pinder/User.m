@@ -13,15 +13,27 @@
 
 @implementation User
 
-- (FEMMapping *)mapping
++ (FEMMapping *)mapping
 {
-    FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:@"Person"];
+    FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:@"User"];
     [mapping addAttributesFromArray:@[@"user_id", @"in_app", @"access_token", @"identifier", @"first_name", @"last_name", @"sex", @"bdate", @"city_id", @"photo_50", @"photo_100", @"photo_200_orig", @"photo_200", @"photo_max_orig", @"domain", @"about"]];
     [mapping addAttributesFromDictionary:@{@"identifier": @"id"}];
     mapping.primaryKey = @"identifier";
     
-    //[mapping addRelationshipMapping:[City defaultMapping] forProperty:@"city" keyPath:@"city_id"];
-    //[mapping addToManyRelationshipMapping:[Country defaultMapping] forProperty:@"country" keyPath:@"country_id"];
+    FEMMapping *fakeCountryMapping = [[FEMMapping alloc] initWithEntityName:@"Country"];
+    fakeCountryMapping.primaryKey = @"country_id";
+    [fakeCountryMapping addAttributesFromDictionary:@{@"country_id": @"country_id"}];
+    [mapping addRelationshipMapping:fakeCountryMapping forProperty:@"country" keyPath:nil];
+    
+    FEMMapping *fakeCityMapping = [[FEMMapping alloc] initWithEntityName:@"City"];
+    fakeCityMapping.primaryKey = @"city_id";
+    [fakeCityMapping addAttributesFromDictionary:@{@"city_id": @"city_id"}];
+    [mapping addRelationshipMapping:fakeCityMapping forProperty:@"city" keyPath:nil];
+    
+    FEMMapping *fakeUniversityMapping = [[FEMMapping alloc] initWithEntityName:@"City"];
+    fakeUniversityMapping.primaryKey = @"university_id";
+    [fakeUniversityMapping addAttributesFromDictionary:@{@"university_id": @"university_id"}];
+    [mapping addRelationshipMapping:fakeUniversityMapping forProperty:@"university" keyPath:nil];
     
     return mapping;
 }

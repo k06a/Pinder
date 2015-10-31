@@ -14,3 +14,4 @@
 #import "City.h"
 #import "User.h"
 #import "Filter.h"
+#import "University.h"

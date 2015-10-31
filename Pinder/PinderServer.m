@@ -80,26 +80,59 @@
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://vk-hackathon.tk/api/vk/auth-url"]]];
 }
 
+- (void)loadUrl:(NSString *)url completion:(void(^)(id result))completion
+{
+    [[self.session dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable connectionError)
+      {
+          if (connectionError) {
+              [self.delegate showError:connectionError];
+              if (completion)
+                  completion(nil);
+              return;
+          }
+          
+          NSError *error;
+          id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+          if (error)
+              [self.delegate showError:error];
+          
+          if (completion)
+              completion(json);
+          self.me = json ?: self.me;
+      }] resume];
+}
+
 - (void)loadProfile:(void(^)(NSDictionary *me))completion
 {
-    [[self.session dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk-hackathon.tk/api/user/me?hash=%@",self.server_token]]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable connectionError)
-    {
-        if (connectionError) {
-            [self.delegate showError:connectionError];
-            if (completion)
-                completion(nil);
-            return;
-        }
-        
-        NSError *error;
-        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-        if (error)
-            [self.delegate showError:error];
-        
+    [self loadUrl:[NSString stringWithFormat:@"http://vk-hackathon.tk/api/user/me?hash=%@",self.server_token] completion:^(id result) {
         if (completion)
-            completion(json);
-        self.me = json ?: self.me;
-    }] resume];
+            completion(result);
+        self.me = result ?: self.me;
+    }];
+}
+
+- (void)loadCountries:(void(^)(NSArray *countries))completion
+{
+    [self loadUrl:@"http://vk-hackathon.tk/country.json" completion:^(id result) {
+        if (completion)
+            completion(result);
+    }];
+}
+
+- (void)loadCities:(void(^)(NSArray *cities))completion
+{
+    [self loadUrl:@"http://vk-hackathon.tk/city.json" completion:^(id result) {
+        if (completion)
+            completion(result);
+    }];
+}
+
+- (void)loadUniversities:(void(^)(NSArray *unis))completion
+{
+    [self loadUrl:@"http://vk-hackathon.tk/universities.json" completion:^(id result) {
+        if (completion)
+            completion(result);
+    }];
 }
 
 #pragma mark - Web View Delegate

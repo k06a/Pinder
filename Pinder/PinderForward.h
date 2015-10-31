@@ -10,3 +10,4 @@
 @class City;
 @class User;
 @class Filter;
+@class University;

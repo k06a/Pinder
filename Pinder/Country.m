@@ -6,10 +6,20 @@
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
+#import <MagicalRecord/MagicalRecord.h>
+#import <FastEasyMapping/FastEasyMapping.h>
+#import "PinderServer.h"
 #import "Country.h"
 
 @implementation Country
 
-// Insert code here to add functionality to your managed object subclass
++ (FEMMapping *)mapping
+{
+    FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:@"Country"];
+    [mapping addAttributesFromArray:@[@"title"]];
+    [mapping addAttributesFromDictionary:@{@"country_id": @"id"}];
+    mapping.primaryKey = @"country_id";
+    return mapping;
+}
 
 @end

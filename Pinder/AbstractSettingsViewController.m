@@ -30,6 +30,11 @@
     return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"country = %@", self.countries[self.filter.country_index.integerValue]]];
 }
 
+- (NSArray *)universities
+{
+    return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"city = %@", self.cities[self.filter.city_index.integerValue]]];
+}
+
 - (Filter *)filter
 {
     if (_filter == nil) {

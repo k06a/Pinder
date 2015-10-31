@@ -1,5 +1,5 @@
 //
-//  Country.h
+//  University.h
 //  Pinder
 //
 //  Created by Антон Буков on 01.11.15.
@@ -10,11 +10,12 @@
 #import <CoreData/CoreData.h>
 #import "PinderForward.h"
 
+@class City;
 @class FEMMapping;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Country : NSManagedObject
+@interface University : NSManagedObject
 
 + (FEMMapping *)mapping;
 
@@ -22,4 +23,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "Country+CoreDataProperties.h"
+#import "University+CoreDataProperties.h"

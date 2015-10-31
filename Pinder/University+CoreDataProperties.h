@@ -1,5 +1,5 @@
 //
-//  City+CoreDataProperties.h
+//  University+CoreDataProperties.h
 //  Pinder
 //
 //  Created by Антон Буков on 01.11.15.
@@ -9,31 +9,25 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "City.h"
+#import "University.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface City (CoreDataProperties)
+@interface University (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *city_id;
+@property (nullable, nonatomic, retain) NSNumber *university_id;
 @property (nullable, nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) City *city;
 @property (nullable, nonatomic, retain) NSSet<User *> *users;
-@property (nullable, nonatomic, retain) Country *country;
-@property (nullable, nonatomic, retain) NSSet<University *> *universities;
 
 @end
 
-@interface City (CoreDataGeneratedAccessors)
+@interface University (CoreDataGeneratedAccessors)
 
 - (void)addUsersObject:(User *)value;
 - (void)removeUsersObject:(User *)value;
 - (void)addUsers:(NSSet<User *> *)values;
 - (void)removeUsers:(NSSet<User *> *)values;
-
-- (void)addUniversitiesObject:(University *)value;
-- (void)removeUniversitiesObject:(University *)value;
-- (void)addUniversities:(NSSet<University *> *)values;
-- (void)removeUniversities:(NSSet<University *> *)values;
 
 @end
 

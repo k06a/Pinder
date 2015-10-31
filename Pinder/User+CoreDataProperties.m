@@ -32,5 +32,6 @@
 @dynamic user_id;
 @dynamic city;
 @dynamic country;
+@dynamic university;
 
 @end

@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *user_id;
 @property (nullable, nonatomic, retain) City *city;
 @property (nullable, nonatomic, retain) Country *country;
+@property (nullable, nonatomic, retain) University *university;
 
 @end
 

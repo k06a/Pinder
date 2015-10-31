@@ -10,11 +10,13 @@
 #import <CoreData/CoreData.h>
 #import "PinderForward.h"
 
+@class FEMMapping;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface City : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
++ (FEMMapping *)mapping;
 
 @end
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		252DD4151BE57D9900EAD507 /* University+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DD4121BE57D9900EAD507 /* University+CoreDataProperties.m */; };
+		252DD4161BE57D9900EAD507 /* University.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DD4141BE57D9900EAD507 /* University.m */; };
+		252DD4191BE5817200EAD507 /* Rukola.otf in Resources */ = {isa = PBXBuildFile; fileRef = 252DD4171BE57F0600EAD507 /* Rukola.otf */; };
 		256C00011BE4FD650062D468 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C00001BE4FD650062D468 /* LoginViewController.m */; };
 		256C00051BE507BC0062D468 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C00041BE507BC0062D468 /* NSMutableURLRequest+Parameters.m */; };
 		256C00091BE512CA0062D468 /* Pinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 256C00071BE512CA0062D468 /* Pinder.xcdatamodeld */; };
@@ -40,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		252DD40E1BE573FD00EAD507 /* PinderForward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinderForward.h; sourceTree = "<group>"; };
+		252DD4111BE57D9900EAD507 /* University+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "University+CoreDataProperties.h"; sourceTree = "<group>"; };
+		252DD4121BE57D9900EAD507 /* University+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "University+CoreDataProperties.m"; sourceTree = "<group>"; };
+		252DD4131BE57D9900EAD507 /* University.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = University.h; sourceTree = "<group>"; };
+		252DD4141BE57D9900EAD507 /* University.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = University.m; sourceTree = "<group>"; };
+		252DD4171BE57F0600EAD507 /* Rukola.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rukola.otf; sourceTree = "<group>"; };
 		256C00001BE4FD650062D468 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		256C00031BE507BC0062D468 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		256C00041BE507BC0062D468 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
@@ -129,6 +137,10 @@
 				25BBFDE11BE56A7A00D42E90 /* City+CoreDataProperties.m */,
 				25BBFDE21BE56A7A00D42E90 /* City.h */,
 				25BBFDE31BE56A7A00D42E90 /* City.m */,
+				252DD4111BE57D9900EAD507 /* University+CoreDataProperties.h */,
+				252DD4121BE57D9900EAD507 /* University+CoreDataProperties.m */,
+				252DD4131BE57D9900EAD507 /* University.h */,
+				252DD4141BE57D9900EAD507 /* University.m */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -188,6 +200,7 @@
 		256CFFDD1BE4AEBD0062D468 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				252DD4171BE57F0600EAD507 /* Rukola.otf */,
 				256CFFDE1BE4AEBD0062D468 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -317,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				256CFFED1BE4AEBD0062D468 /* LaunchScreen.storyboard in Resources */,
+				252DD4191BE5817200EAD507 /* Rukola.otf in Resources */,
 				256CFFEA1BE4AEBD0062D468 /* Assets.xcassets in Resources */,
 				256CFFE81BE4AEBD0062D468 /* Main.storyboard in Resources */,
 				25BBFDCB1BE54A3100D42E90 /* ABMultiValuePickerController.storyboard in Resources */,
@@ -415,12 +429,14 @@
 				256CFFE51BE4AEBD0062D468 /* ViewController.m in Sources */,
 				25BBFDE41BE56A7A00D42E90 /* Country+CoreDataProperties.m in Sources */,
 				256C00011BE4FD650062D468 /* LoginViewController.m in Sources */,
+				252DD4161BE57D9900EAD507 /* University.m in Sources */,
 				25BBFDDB1BE566ED00D42E90 /* AbstractSettingsViewController.m in Sources */,
 				25BBFDE51BE56A7A00D42E90 /* Country.m in Sources */,
 				256C000E1BE515ED0062D468 /* User+CoreDataProperties.m in Sources */,
 				25BBFDD51BE5533100D42E90 /* Filter.m in Sources */,
 				256C00051BE507BC0062D468 /* NSMutableURLRequest+Parameters.m in Sources */,
 				256CFFF61BE4B6AC0062D468 /* ABPinderView.m in Sources */,
+				252DD4151BE57D9900EAD507 /* University+CoreDataProperties.m in Sources */,
 				256C00091BE512CA0062D468 /* Pinder.xcdatamodeld in Sources */,
 				25BBFDBD1BE53A6400D42E90 /* FirstSettingsViewController.m in Sources */,
 				256C00151BE5237B0062D468 /* SettingsViewController.m in Sources */,

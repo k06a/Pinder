@@ -8,6 +8,7 @@
 
 #import <Masonry/Masonry.h>
 
+#import "Pinder.h"
 #import "PinderServer.h"
 #import "LoginViewController.h"
 
@@ -39,8 +40,16 @@
             [PinderServer sharedServer].user_id = user_id;
             [PinderServer sharedServer].server_token = server_token;
             
-            [[PinderServer sharedServer] loadProfile:^(NSDictionary *me) {
-                NSLog(@"%@", me);
+            [[PinderServer sharedServer] loadProfile:^(NSDictionary *meDict) {
+                NSMutableDictionary *dict = [meDict mutableCopy];
+                if (dict[@"country_id"] == [NSNull null])
+                    dict[@"country_id"] = @"0";
+                if (dict[@"city_id"] == [NSNull null])
+                    dict[@"city_id"] = @"0";
+                if (dict[@"university_id"] == [NSNull null])
+                    dict[@"university_id"] = @"0";
+                User *me = [FEMDeserializer objectFromRepresentation:meDict mapping:[User mapping] context:[NSManagedObjectContext MR_defaultContext]];
+                NSLog(@"Loaded user profile: %@", me);
                 [self dismissViewControllerAnimated:YES completion:nil];
             }];
         }

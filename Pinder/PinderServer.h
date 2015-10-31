@@ -32,5 +32,8 @@
 
 - (void)loginInView:(UIWebView *)webView completion:(void(^)(NSString *user_id, NSString *server_token))completion;
 - (void)loadProfile:(void(^)(NSDictionary *me))completion;
+- (void)loadCountries:(void(^)(NSArray *countries))completion;
+- (void)loadCities:(void(^)(NSArray *cities))completion;
+- (void)loadUniversities:(void(^)(NSArray *unis))completion;
 
 @end

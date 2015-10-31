@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSArray *countries;
 @property (nonatomic, strong) NSArray *cities;
+@property (nonatomic, strong) NSArray *universities;
 
 - (NSString *)descriptionForItem:(NSDictionary *)item;
 - (void)presentChoiseControllerForItem:(NSDictionary *)item completion:(void(^)())completion;

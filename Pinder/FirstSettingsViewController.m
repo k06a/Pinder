@@ -32,13 +32,19 @@
                                  @"key":@"country_index",
                                  @"title":@"Проживают в стране",
                                  @"multiple":@NO,
-                                 @"none":@NO,
+                                 @"none":@YES,
                                  @"only":@NO},
                         @"cty":@{@"items":[self.cities valueForKey:@"title"],
                                  @"key":@"city_index",
-                                 @"title":@"Проживают в стране",
+                                 @"title":@"Проживают в городе",
                                  @"multiple":@NO,
-                                 @"none":@NO,
+                                 @"none":@YES,
+                                 @"only":@NO},
+                        @"uni":@{@"items":[self.universities valueForKey:@"title"],
+                                 @"key":@"university_index",
+                                 @"title":@"Учились в ВУЗе",
+                                 @"multiple":@NO,
+                                 @"none":@YES,
                                  @"only":@NO},
                         };
     }
@@ -95,6 +101,10 @@
             return self.items[@"sex"];
         if (indexPath.row == 2)
             return self.items[@"ctr"];
+        if (indexPath.row == 3)
+            return self.items[@"cty"];
+        if (indexPath.row == 4)
+            return self.items[@"uni"];
         return nil;
     }();
     

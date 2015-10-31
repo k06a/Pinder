@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface User : NSManagedObject
 
-- (FEMMapping *)mapping;
++ (FEMMapping *)mapping;
 + (int64_t)nextSortId;
 + (instancetype)me;
 

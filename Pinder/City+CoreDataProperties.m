@@ -17,5 +17,6 @@
 @dynamic title;
 @dynamic users;
 @dynamic country;
+@dynamic universities;
 
 @end
