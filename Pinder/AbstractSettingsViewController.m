@@ -27,7 +27,7 @@
 
 - (NSArray *)cities
 {
-    return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"country_id = %@", self.countries[self.filter.country_index.integerValue]]];
+    return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"country = %@", self.countries[self.filter.country_index.integerValue]]];
 }
 
 - (Filter *)filter
@@ -38,7 +38,7 @@
             _filter = [Filter MR_createEntity];
             _filter.sex_m = @([[User me].sex integerValue] == SexWoman);
             _filter.sex_w = @([[User me].sex integerValue] == SexMan);
-            //_filter.country_index = [[self.countries valueForKey:@"country_id"] indexOfObject:[User me].country.country_id];
+            _filter.country_index = @([self.countries indexOfObject:[User me].country]);
         }
     }
     return _filter;

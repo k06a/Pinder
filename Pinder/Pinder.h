@@ -10,7 +10,7 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import <FastEasyMapping/FastEasyMapping.h>
 
-#import "User.h"
-#import "Filter.h"
 #import "Country.h"
 #import "City.h"
+#import "User.h"
+#import "Filter.h"

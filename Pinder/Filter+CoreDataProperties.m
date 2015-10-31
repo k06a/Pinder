@@ -2,7 +2,7 @@
 //  Filter+CoreDataProperties.m
 //  Pinder
 //
-//  Created by Антон Буков on 31.10.15.
+//  Created by Антон Буков on 01.11.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

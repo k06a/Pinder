@@ -16,8 +16,18 @@ NS_ASSUME_NONNULL_BEGIN
 @interface City (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSNumber *city_id;
-@property (nullable, nonatomic, retain) NSNumber *country_id;
 @property (nullable, nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) NSSet<User *> *users;
+@property (nullable, nonatomic, retain) Country *country;
+
+@end
+
+@interface City (CoreDataGeneratedAccessors)
+
+- (void)addUsersObject:(User *)value;
+- (void)removeUsersObject:(User *)value;
+- (void)addUsers:(NSSet<User *> *)values;
+- (void)removeUsers:(NSSet<User *> *)values;
 
 @end
 

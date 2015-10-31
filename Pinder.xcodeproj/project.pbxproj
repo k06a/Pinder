@@ -39,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		252DD40E1BE573FD00EAD507 /* PinderForward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinderForward.h; sourceTree = "<group>"; };
 		256C00001BE4FD650062D468 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		256C00031BE507BC0062D468 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		256C00041BE507BC0062D468 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
@@ -109,13 +110,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		256C00061BE50DDA0062D468 /* Model */ = {
+		252DD40D1BE572A900EAD507 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				256CFFFC1BE4F5A00062D468 /* PinderServer.h */,
-				256CFFFD1BE4F5A00062D468 /* PinderServer.m */,
-				256C00101BE516ED0062D468 /* Pinder.h */,
-				256C00071BE512CA0062D468 /* Pinder.xcdatamodeld */,
 				256C000A1BE515ED0062D468 /* User+CoreDataProperties.h */,
 				256C000B1BE515ED0062D468 /* User+CoreDataProperties.m */,
 				256C000C1BE515ED0062D468 /* User.h */,
@@ -132,6 +129,19 @@
 				25BBFDE11BE56A7A00D42E90 /* City+CoreDataProperties.m */,
 				25BBFDE21BE56A7A00D42E90 /* City.h */,
 				25BBFDE31BE56A7A00D42E90 /* City.m */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
+		256C00061BE50DDA0062D468 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				256CFFFC1BE4F5A00062D468 /* PinderServer.h */,
+				256CFFFD1BE4F5A00062D468 /* PinderServer.m */,
+				256C00071BE512CA0062D468 /* Pinder.xcdatamodeld */,
+				256C00101BE516ED0062D468 /* Pinder.h */,
+				252DD40E1BE573FD00EAD507 /* PinderForward.h */,
+				252DD40D1BE572A900EAD507 /* Generated */,
 			);
 			name = Model;
 			sourceTree = "<group>";

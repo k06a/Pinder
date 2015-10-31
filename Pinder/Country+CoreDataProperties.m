@@ -15,5 +15,7 @@
 
 @dynamic country_id;
 @dynamic title;
+@dynamic users;
+@dynamic cities;
 
 @end

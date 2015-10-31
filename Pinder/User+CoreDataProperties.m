@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.m
 //  Pinder
 //
-//  Created by Anton Bukov on 31.10.15.
+//  Created by Антон Буков on 01.11.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,22 +13,24 @@
 
 @implementation User (CoreDataProperties)
 
-@dynamic user_id;
-@dynamic in_app;
+@dynamic about;
 @dynamic access_token;
-@dynamic identifier;
-@dynamic first_name;
-@dynamic last_name;
-@dynamic sex;
-@dynamic sort_id;
 @dynamic bdate;
 @dynamic city_id;
+@dynamic domain;
+@dynamic first_name;
+@dynamic identifier;
+@dynamic in_app;
+@dynamic last_name;
 @dynamic photo_50;
 @dynamic photo_100;
-@dynamic photo_200_orig;
 @dynamic photo_200;
+@dynamic photo_200_orig;
 @dynamic photo_max_orig;
-@dynamic domain;
-@dynamic about;
+@dynamic sex;
+@dynamic sort_id;
+@dynamic user_id;
+@dynamic city;
+@dynamic country;
 
 @end

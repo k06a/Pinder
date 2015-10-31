@@ -14,7 +14,8 @@
 @implementation City (CoreDataProperties)
 
 @dynamic city_id;
-@dynamic country_id;
 @dynamic title;
+@dynamic users;
+@dynamic country;
 
 @end
