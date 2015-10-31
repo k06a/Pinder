@@ -17,6 +17,7 @@ pod 'FastEasyMapping'
 pod 'Masonry'
 pod 'SVProgressHUD'
 pod 'UIView-IBDesignable'
+pod 'MSRangeSlider'
+pod 'ABIntentions'
 
 end
-

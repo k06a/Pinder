@@ -1,5 +1,5 @@
 //
-//  LoginViewController.h
+//  SettingsViewController.h
 //  Pinder
 //
 //  Created by Anton Bukov on 31.10.15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface SettingsViewController : UIViewController
 
 @end

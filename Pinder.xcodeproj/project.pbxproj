@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		256C00011BE4FD650062D468 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C00001BE4FD650062D468 /* LoginViewController.m */; };
 		256C00051BE507BC0062D468 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C00041BE507BC0062D468 /* NSMutableURLRequest+Parameters.m */; };
+		256C00091BE512CA0062D468 /* Pinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 256C00071BE512CA0062D468 /* Pinder.xcdatamodeld */; };
+		256C000E1BE515ED0062D468 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C000B1BE515ED0062D468 /* User+CoreDataProperties.m */; };
+		256C000F1BE515ED0062D468 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C000D1BE515ED0062D468 /* User.m */; };
+		256C00151BE5237B0062D468 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C00141BE5237B0062D468 /* SettingsViewController.m */; };
 		256CFFDF1BE4AEBD0062D468 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFDE1BE4AEBD0062D468 /* main.m */; };
 		256CFFE21BE4AEBD0062D468 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFE11BE4AEBD0062D468 /* AppDelegate.m */; };
 		256CFFE51BE4AEBD0062D468 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFE41BE4AEBD0062D468 /* ViewController.m */; };
@@ -17,6 +21,10 @@
 		256CFFED1BE4AEBD0062D468 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256CFFEB1BE4AEBD0062D468 /* LaunchScreen.storyboard */; };
 		256CFFF61BE4B6AC0062D468 /* ABPinderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFF51BE4B6AC0062D468 /* ABPinderView.m */; };
 		256CFFFE1BE4F5A00062D468 /* PinderServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFFD1BE4F5A00062D468 /* PinderServer.m */; };
+		25BBFDBD1BE53A6400D42E90 /* FirstSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDBC1BE53A6400D42E90 /* FirstSettingsViewController.m */; };
+		25BBFDC01BE53B1200D42E90 /* SecondSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDBF1BE53B1200D42E90 /* SecondSettingsViewController.m */; };
+		25BBFDC31BE53CFB00D42E90 /* ThirdSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDC21BE53CFB00D42E90 /* ThirdSettingsViewController.m */; };
+		25BBFDC61BE5408200D42E90 /* ValuePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BBFDC51BE5408200D42E90 /* ValuePickerViewController.m */; };
 		4713C72CDC4CEAF9BB0DAD41 /* libPods-Pinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F62A42D2EF09033BAB47671 /* libPods-Pinder.a */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +32,14 @@
 		256C00001BE4FD650062D468 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		256C00031BE507BC0062D468 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		256C00041BE507BC0062D468 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
+		256C00081BE512CA0062D468 /* Pinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinder.xcdatamodel; sourceTree = "<group>"; };
+		256C000A1BE515ED0062D468 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		256C000B1BE515ED0062D468 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		256C000C1BE515ED0062D468 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		256C000D1BE515ED0062D468 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		256C00101BE516ED0062D468 /* Pinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pinder.h; sourceTree = "<group>"; };
+		256C00131BE5237B0062D468 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		256C00141BE5237B0062D468 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		256CFFDA1BE4AEBD0062D468 /* Pinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256CFFDE1BE4AEBD0062D468 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		256CFFE01BE4AEBD0062D468 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +55,14 @@
 		256CFFFC1BE4F5A00062D468 /* PinderServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinderServer.h; sourceTree = "<group>"; };
 		256CFFFD1BE4F5A00062D468 /* PinderServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinderServer.m; sourceTree = "<group>"; };
 		256CFFFF1BE4FD650062D468 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		25BBFDBB1BE53A6400D42E90 /* FirstSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstSettingsViewController.h; sourceTree = "<group>"; };
+		25BBFDBC1BE53A6400D42E90 /* FirstSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstSettingsViewController.m; sourceTree = "<group>"; };
+		25BBFDBE1BE53B1200D42E90 /* SecondSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondSettingsViewController.h; sourceTree = "<group>"; };
+		25BBFDBF1BE53B1200D42E90 /* SecondSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondSettingsViewController.m; sourceTree = "<group>"; };
+		25BBFDC11BE53CFB00D42E90 /* ThirdSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdSettingsViewController.h; sourceTree = "<group>"; };
+		25BBFDC21BE53CFB00D42E90 /* ThirdSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdSettingsViewController.m; sourceTree = "<group>"; };
+		25BBFDC41BE5408100D42E90 /* ValuePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuePickerViewController.h; sourceTree = "<group>"; };
+		25BBFDC51BE5408200D42E90 /* ValuePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuePickerViewController.m; sourceTree = "<group>"; };
 		7956AC93ADA724A4534323B0 /* Pods-Pinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pinder/Pods-Pinder.release.xcconfig"; sourceTree = "<group>"; };
 		7F62A42D2EF09033BAB47671 /* libPods-Pinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A52EEC760CE62451228172 /* Pods-Pinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pinder/Pods-Pinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +80,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		256C00061BE50DDA0062D468 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				256CFFFC1BE4F5A00062D468 /* PinderServer.h */,
+				256CFFFD1BE4F5A00062D468 /* PinderServer.m */,
+				256C00101BE516ED0062D468 /* Pinder.h */,
+				256C00071BE512CA0062D468 /* Pinder.xcdatamodeld */,
+				256C000A1BE515ED0062D468 /* User+CoreDataProperties.h */,
+				256C000B1BE515ED0062D468 /* User+CoreDataProperties.m */,
+				256C000C1BE515ED0062D468 /* User.h */,
+				256C000D1BE515ED0062D468 /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		256CFFD11BE4AEBD0062D468 = {
 			isa = PBXGroup;
 			children = (
@@ -78,10 +117,14 @@
 			isa = PBXGroup;
 			children = (
 				256CFFFB1BE4D6830062D468 /* Reusable */,
+				256C00061BE50DDA0062D468 /* Model */,
 				256CFFE01BE4AEBD0062D468 /* AppDelegate.h */,
 				256CFFE11BE4AEBD0062D468 /* AppDelegate.m */,
 				256CFFE31BE4AEBD0062D468 /* ViewController.h */,
 				256CFFE41BE4AEBD0062D468 /* ViewController.m */,
+				25BBFDC41BE5408100D42E90 /* ValuePickerViewController.h */,
+				25BBFDC51BE5408200D42E90 /* ValuePickerViewController.m */,
+				25BBFDBA1BE53A0B00D42E90 /* Settings */,
 				256CFFFF1BE4FD650062D468 /* LoginViewController.h */,
 				256C00001BE4FD650062D468 /* LoginViewController.m */,
 				256CFFE61BE4AEBD0062D468 /* Main.storyboard */,
@@ -89,8 +132,6 @@
 				256CFFEB1BE4AEBD0062D468 /* LaunchScreen.storyboard */,
 				256CFFEE1BE4AEBD0062D468 /* Info.plist */,
 				256CFFDD1BE4AEBD0062D468 /* Supporting Files */,
-				256CFFFC1BE4F5A00062D468 /* PinderServer.h */,
-				256CFFFD1BE4F5A00062D468 /* PinderServer.m */,
 			);
 			path = Pinder;
 			sourceTree = "<group>";
@@ -112,6 +153,21 @@
 				256CFFF51BE4B6AC0062D468 /* ABPinderView.m */,
 			);
 			name = Reusable;
+			sourceTree = "<group>";
+		};
+		25BBFDBA1BE53A0B00D42E90 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				256C00131BE5237B0062D468 /* SettingsViewController.h */,
+				256C00141BE5237B0062D468 /* SettingsViewController.m */,
+				25BBFDBB1BE53A6400D42E90 /* FirstSettingsViewController.h */,
+				25BBFDBC1BE53A6400D42E90 /* FirstSettingsViewController.m */,
+				25BBFDBE1BE53B1200D42E90 /* SecondSettingsViewController.h */,
+				25BBFDBF1BE53B1200D42E90 /* SecondSettingsViewController.m */,
+				25BBFDC11BE53CFB00D42E90 /* ThirdSettingsViewController.h */,
+				25BBFDC21BE53CFB00D42E90 /* ThirdSettingsViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		9828409B2BF5109D4543F570 /* Pods */ = {
@@ -282,13 +338,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256C000F1BE515ED0062D468 /* User.m in Sources */,
+				25BBFDC61BE5408200D42E90 /* ValuePickerViewController.m in Sources */,
 				256CFFFE1BE4F5A00062D468 /* PinderServer.m in Sources */,
 				256CFFE51BE4AEBD0062D468 /* ViewController.m in Sources */,
 				256C00011BE4FD650062D468 /* LoginViewController.m in Sources */,
+				256C000E1BE515ED0062D468 /* User+CoreDataProperties.m in Sources */,
 				256C00051BE507BC0062D468 /* NSMutableURLRequest+Parameters.m in Sources */,
 				256CFFF61BE4B6AC0062D468 /* ABPinderView.m in Sources */,
+				256C00091BE512CA0062D468 /* Pinder.xcdatamodeld in Sources */,
+				25BBFDBD1BE53A6400D42E90 /* FirstSettingsViewController.m in Sources */,
+				256C00151BE5237B0062D468 /* SettingsViewController.m in Sources */,
 				256CFFE21BE4AEBD0062D468 /* AppDelegate.m in Sources */,
 				256CFFDF1BE4AEBD0062D468 /* main.m in Sources */,
+				25BBFDC01BE53B1200D42E90 /* SecondSettingsViewController.m in Sources */,
+				25BBFDC31BE53CFB00D42E90 /* ThirdSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +506,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		256C00071BE512CA0062D468 /* Pinder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				256C00081BE512CA0062D468 /* Pinder.xcdatamodel */,
+			);
+			currentVersion = 256C00081BE512CA0062D468 /* Pinder.xcdatamodel */;
+			path = Pinder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 256CFFD21BE4AEBD0062D468 /* Project object */;
 }

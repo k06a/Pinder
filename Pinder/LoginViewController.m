@@ -2,7 +2,7 @@
 //  LoginViewController.m
 //  Pinder
 //
-//  Created by Антон Буков on 31.10.15.
+//  Created by Anton Bukov on 31.10.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
@@ -38,8 +38,12 @@
         {
             [PinderServer sharedServer].user_id = user_id;
             [PinderServer sharedServer].server_token = server_token;
+            
+            [[PinderServer sharedServer] loadProfile:^(NSDictionary *me) {
+                NSLog(@"%@", me);
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
         }
-        [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 

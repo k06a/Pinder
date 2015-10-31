@@ -2,7 +2,7 @@
 //  PinderServer.m
 //  Pinder
 //
-//  Created by Антон Буков on 31.10.15.
+//  Created by Anton Bukov on 31.10.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
@@ -80,17 +80,27 @@
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://vk-hackathon.tk/api/vk/auth-url"]]];
 }
 
-/*
-- (void)login:(void(^)(NSString *user_id, NSString *server_token))completion
+- (void)loadProfile:(void(^)(NSDictionary *me))completion
 {
-    [self.session dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://vk-hackathon.tk/api/vk/auth-url"]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+    [[self.session dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk-hackathon.tk/api/user/me?hash=%@",self.server_token]]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable connectionError)
     {
+        if (connectionError) {
+            [self.delegate showError:connectionError];
+            if (completion)
+                completion(nil);
+            return;
+        }
+        
+        NSError *error;
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         if (error)
-            return [self.delegate showError:error];
+            [self.delegate showError:error];
         
-        
-    }];
-*/
+        if (completion)
+            completion(json);
+        self.me = json ?: self.me;
+    }] resume];
+}
 
 #pragma mark - Web View Delegate
 
