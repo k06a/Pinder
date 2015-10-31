@@ -2,26 +2,47 @@
 //  ViewController.m
 //  Pinder
 //
-//  Created by Антон Буков on 31.10.15.
-//  Copyright © 2015 Codeless. All rights reserved.
+//  Created by Anton Bukov on 31.10.15.
+//  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
+#import "PinderServer.h"
+#import "ABPinderView.h"
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <ABPinderViewDataSource>
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if ([PinderServer sharedServer].user_id == nil &&
+        [PinderServer sharedServer].server_token == nil)
+    {
+        [self performSegueWithIdentifier:@"segue_login" sender:self];
+    }
+}
+
+#pragma mark - Pinder
+
+- (NSInteger)numberOfItemsInPinderView:(ABPinderView *)tinderView
+{
+    return 100;
+}
+
+#pragma mark - Navigation
+
+- (IBAction)back:(UIStoryboardSegue *)segue
+{
 }
 
 @end
