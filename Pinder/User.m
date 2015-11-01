@@ -30,10 +30,10 @@
     [fakeCityMapping addAttributesFromDictionary:@{@"city_id": @"city_id"}];
     [mapping addRelationshipMapping:fakeCityMapping forProperty:@"city" keyPath:nil];
     
-    FEMMapping *fakeUniversityMapping = [[FEMMapping alloc] initWithEntityName:@"City"];
+    /*FEMMapping *fakeUniversityMapping = [[FEMMapping alloc] initWithEntityName:@"City"];
     fakeUniversityMapping.primaryKey = @"university_id";
     [fakeUniversityMapping addAttributesFromDictionary:@{@"university_id": @"university_id"}];
-    [mapping addRelationshipMapping:fakeUniversityMapping forProperty:@"university" keyPath:nil];
+    [mapping addRelationshipMapping:fakeUniversityMapping forProperty:@"university" keyPath:nil];*/
     
     return mapping;
 }

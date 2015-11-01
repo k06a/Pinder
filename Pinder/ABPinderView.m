@@ -84,10 +84,11 @@
 
 - (void)setCount:(NSInteger)count
 {
-    for (NSInteger i = _count; i < count; i++) {
+    for (NSInteger i = _count; i < MIN(count,[self.tinderDelegate numberOfItemsInPinderView:self]); i++)
+    {
         UIView *view = [self cloneSelfView:YES];
-        if ([self.tinderDelegate respondsToSelector:@selector(tinderView:willDisplayItem:atIndex:)])
-            [self.tinderDelegate tinderView:self willDisplayItem:(id)view atIndex:i];
+        if ([self.tinderDelegate respondsToSelector:@selector(pinderView:willDisplayItem:atIndex:)])
+            [self.tinderDelegate pinderView:self willDisplayItem:(id)view atIndex:i];
         [self.views addObject:view];
     }
     for (NSInteger i = _count; i >= count; i--) {
@@ -166,12 +167,12 @@
     if (self.pan.state == UIGestureRecognizerStateChanged)
     {
         self.topView.transform = [self transfromForOffset:offset];
-        if ([self.tinderDelegate respondsToSelector:@selector(tinderView:updateCell:atIndex:forDistance:)])
-            [self.tinderDelegate tinderView:self updateCell:self.views.firstObject atIndex:self.globalIndex-self.count+1 forDistance:offset.x];
+        if ([self.tinderDelegate respondsToSelector:@selector(pinderView:updateCell:atIndex:forDistance:)])
+            [self.tinderDelegate pinderView:self updateCell:self.views.firstObject atIndex:self.globalIndex-self.count+1 forDistance:offset.x];
         [self layoutIfNeeded];
         if (self.reusableView.superview == nil) {
-            if ([self.tinderDelegate respondsToSelector:@selector(tinderView:willDisplayItem:atIndex:)])
-                [self.tinderDelegate tinderView:self willDisplayItem:self.reusableView atIndex:self.globalIndex];
+            if ([self.tinderDelegate respondsToSelector:@selector(pinderView:willDisplayItem:atIndex:)])
+                [self.tinderDelegate pinderView:self willDisplayItem:self.reusableView atIndex:self.globalIndex];
             [self insertSubview:self.reusableView atIndex:0];
             self.reusableView.alpha = 0.1;
             self.reusableView.transform = [self originTransformForViewAtIndex:self.views.count-1];
@@ -185,8 +186,8 @@
     {
         [UIView animateWithDuration:0.35 delay:0.0 usingSpringWithDamping:0.4 initialSpringVelocity:0 options:(UIViewAnimationOptionCurveLinear) animations:^{
             self.topView.transform = CGAffineTransformIdentity;
-            if ([self.tinderDelegate respondsToSelector:@selector(tinderView:animateBackCell:atIndex:)])
-                [self.tinderDelegate tinderView:self animateBackCell:self.views.firstObject atIndex:self.globalIndex-self.count+1];
+            if ([self.tinderDelegate respondsToSelector:@selector(pinderView:animateBackCell:atIndex:)])
+                [self.tinderDelegate pinderView:self animateBackCell:self.views.firstObject atIndex:self.globalIndex-self.count+1];
         } completion:nil];
         
         [UIView animateWithDuration:0.2 delay:0.0 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
@@ -227,8 +228,8 @@
     [self.views addObject:self.reusableView];
     
     if (self.reusableView.superview == nil) {
-        if ([self.tinderDelegate respondsToSelector:@selector(tinderView:willDisplayItem:atIndex:)])
-            [self.tinderDelegate tinderView:self willDisplayItem:self.reusableView atIndex:self.globalIndex];
+        if ([self.tinderDelegate respondsToSelector:@selector(pinderView:willDisplayItem:atIndex:)])
+            [self.tinderDelegate pinderView:self willDisplayItem:self.reusableView atIndex:self.globalIndex];
         [self insertSubview:self.reusableView atIndex:0];
         self.reusableView.transform = [self originTransformForViewAtIndex:self.views.count-1];
     }
@@ -238,11 +239,11 @@
         CGFloat sign = offset/ABS(offset);
         topView.transform = [self transfromForOffset:CGPointMake(sign*[UIScreen mainScreen].bounds.size.width*1.5,100)];
         if (sign < 0) {
-            if ([self.tinderDelegate respondsToSelector:@selector(tinderView:animateLeftCell:atIndex:)])
-                [self.tinderDelegate tinderView:self animateLeftCell:cell atIndex:self.globalIndex-self.count+1];
+            if ([self.tinderDelegate respondsToSelector:@selector(pinderView:animateLeftCell:atIndex:)])
+                [self.tinderDelegate pinderView:self animateLeftCell:cell atIndex:self.globalIndex-self.count+1];
         } else {
-            if ([self.tinderDelegate respondsToSelector:@selector(tinderView:animateRightCell:atIndex:)])
-                [self.tinderDelegate tinderView:self animateRightCell:cell atIndex:self.globalIndex-self.count+1];
+            if ([self.tinderDelegate respondsToSelector:@selector(pinderView:animateRightCell:atIndex:)])
+                [self.tinderDelegate pinderView:self animateRightCell:cell atIndex:self.globalIndex-self.count+1];
         }
         self.progress = 0.0;
         [self layoutIfNeeded];
@@ -253,8 +254,8 @@
             self.reusableView = cell;
         topView.transform = CGAffineTransformIdentity;
         [self.exceptViews removeObject:topView];
-        if ([self.tinderDelegate respondsToSelector:@selector(tinderView:didHideTopItem:)])
-            [self.tinderDelegate tinderView:self didHideTopItem:self.reusableView];
+        if ([self.tinderDelegate respondsToSelector:@selector(pinderView:didHideTopItem:)])
+            [self.tinderDelegate pinderView:self didHideTopItem:self.reusableView];
     }];
     
     self.globalIndex++;
@@ -300,8 +301,8 @@
     [self.views removeLastObject];
     [self.views insertObject:cell atIndex:0];
     
-    if ([self.tinderDelegate respondsToSelector:@selector(tinderView:willDisplayItem:atIndex:)])
-        [self.tinderDelegate tinderView:self willDisplayItem:cell atIndex:self.globalIndex-self.count-1];
+    if ([self.tinderDelegate respondsToSelector:@selector(pinderView:willDisplayItem:atIndex:)])
+        [self.tinderDelegate pinderView:self willDisplayItem:cell atIndex:self.globalIndex-self.count-1];
     [self addSubview:cell];
     cell.transform = [self originTransformForViewAtIndex:0];
     topView.transform = [self transfromForOffset:CGPointMake(sign*[UIScreen mainScreen].bounds.size.width*1.5,100)];
@@ -313,8 +314,8 @@
         if (![self.views containsObject:cell])
             [cell removeFromSuperview];
         [self.exceptViews removeObject:topView];
-        if ([self.tinderDelegate respondsToSelector:@selector(tinderView:didHideTopItem:)])
-            [self.tinderDelegate tinderView:self didHideTopItem:prevTopCell];
+        if ([self.tinderDelegate respondsToSelector:@selector(pinderView:didHideTopItem:)])
+            [self.tinderDelegate pinderView:self didHideTopItem:prevTopCell];
     }];
     
     self.globalIndex--;

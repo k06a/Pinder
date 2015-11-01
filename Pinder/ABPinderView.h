@@ -12,17 +12,17 @@
 
 @protocol ABPinderViewDataSource <NSObject>
 @optional
-- (NSInteger)numberOfItemsInPinderView:(ABPinderView *)tinderView;
-- (void)tinderView:(ABPinderView *)tinderView willDisplayItem:(UITableViewCell *)cell atIndex:(NSInteger)index;
-- (void)tinderView:(ABPinderView *)tinderView didHideTopItem:(UITableViewCell *)cell;
+- (NSInteger)numberOfItemsInPinderView:(ABPinderView *)pinderView;
+- (void)pinderView:(ABPinderView *)pinderView willDisplayItem:(UITableViewCell *)cell atIndex:(NSInteger)index;
+- (void)pinderView:(ABPinderView *)pinderView didHideTopItem:(UITableViewCell *)cell;
 
-- (void)tinderView:(ABPinderView *)tinderView movedToLeft:(NSInteger)index;
-- (void)tinderView:(ABPinderView *)tinderView movedToRight:(NSInteger)index;
+- (void)pinderView:(ABPinderView *)pinderView movedToLeft:(NSInteger)index;
+- (void)pinderView:(ABPinderView *)pinderView movedToRight:(NSInteger)index;
 
-- (void)tinderView:(ABPinderView *)tinderView updateCell:(UITableViewCell *)cell atIndex:(NSInteger)index forDistance:(CGFloat)distance;
-- (void)tinderView:(ABPinderView *)tinderView animateBackCell:(UITableViewCell *)cell atIndex:(NSInteger)index;
-- (void)tinderView:(ABPinderView *)tinderView animateLeftCell:(UITableViewCell *)cell atIndex:(NSInteger)index;
-- (void)tinderView:(ABPinderView *)tinderView animateRightCell:(UITableViewCell *)cell atIndex:(NSInteger)index;
+- (void)pinderView:(ABPinderView *)pinderView updateCell:(UITableViewCell *)cell atIndex:(NSInteger)index forDistance:(CGFloat)distance;
+- (void)pinderView:(ABPinderView *)pinderView animateBackCell:(UITableViewCell *)cell atIndex:(NSInteger)index;
+- (void)pinderView:(ABPinderView *)pinderView animateLeftCell:(UITableViewCell *)cell atIndex:(NSInteger)index;
+- (void)pinderView:(ABPinderView *)pinderView animateRightCell:(UITableViewCell *)cell atIndex:(NSInteger)index;
 
 @end
 

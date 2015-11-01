@@ -1,0 +1,4 @@
+[submodule "FastEasyMapping"]
+	path = FastEasyMapping
+	url = https://github.com/k06a/FastEasyMapping
+	branch = master2

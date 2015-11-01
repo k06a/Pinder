@@ -10,6 +10,7 @@
 		252DD4151BE57D9900EAD507 /* University+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DD4121BE57D9900EAD507 /* University+CoreDataProperties.m */; };
 		252DD4161BE57D9900EAD507 /* University.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DD4141BE57D9900EAD507 /* University.m */; };
 		252DD4191BE5817200EAD507 /* Rukola.otf in Resources */ = {isa = PBXBuildFile; fileRef = 252DD4171BE57F0600EAD507 /* Rukola.otf */; };
+		252DD41C1BE5AC4B00EAD507 /* PinderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 252DD41B1BE5AC4B00EAD507 /* PinderCell.m */; };
 		256C00011BE4FD650062D468 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C00001BE4FD650062D468 /* LoginViewController.m */; };
 		256C00051BE507BC0062D468 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C00041BE507BC0062D468 /* NSMutableURLRequest+Parameters.m */; };
 		256C00091BE512CA0062D468 /* Pinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 256C00071BE512CA0062D468 /* Pinder.xcdatamodeld */; };
@@ -18,7 +19,7 @@
 		256C00151BE5237B0062D468 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256C00141BE5237B0062D468 /* SettingsViewController.m */; };
 		256CFFDF1BE4AEBD0062D468 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFDE1BE4AEBD0062D468 /* main.m */; };
 		256CFFE21BE4AEBD0062D468 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFE11BE4AEBD0062D468 /* AppDelegate.m */; };
-		256CFFE51BE4AEBD0062D468 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFE41BE4AEBD0062D468 /* ViewController.m */; };
+		256CFFE51BE4AEBD0062D468 /* PinderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CFFE41BE4AEBD0062D468 /* PinderViewController.m */; };
 		256CFFE81BE4AEBD0062D468 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256CFFE61BE4AEBD0062D468 /* Main.storyboard */; };
 		256CFFEA1BE4AEBD0062D468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256CFFE91BE4AEBD0062D468 /* Assets.xcassets */; };
 		256CFFED1BE4AEBD0062D468 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256CFFEB1BE4AEBD0062D468 /* LaunchScreen.storyboard */; };
@@ -48,6 +49,8 @@
 		252DD4131BE57D9900EAD507 /* University.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = University.h; sourceTree = "<group>"; };
 		252DD4141BE57D9900EAD507 /* University.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = University.m; sourceTree = "<group>"; };
 		252DD4171BE57F0600EAD507 /* Rukola.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rukola.otf; sourceTree = "<group>"; };
+		252DD41A1BE5AC4B00EAD507 /* PinderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinderCell.h; sourceTree = "<group>"; };
+		252DD41B1BE5AC4B00EAD507 /* PinderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinderCell.m; sourceTree = "<group>"; };
 		256C00001BE4FD650062D468 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		256C00031BE507BC0062D468 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		256C00041BE507BC0062D468 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
@@ -63,8 +66,8 @@
 		256CFFDE1BE4AEBD0062D468 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		256CFFE01BE4AEBD0062D468 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		256CFFE11BE4AEBD0062D468 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		256CFFE31BE4AEBD0062D468 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		256CFFE41BE4AEBD0062D468 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		256CFFE31BE4AEBD0062D468 /* PinderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinderViewController.h; sourceTree = "<group>"; };
+		256CFFE41BE4AEBD0062D468 /* PinderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinderViewController.m; sourceTree = "<group>"; };
 		256CFFE71BE4AEBD0062D468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		256CFFE91BE4AEBD0062D468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		256CFFEC1BE4AEBD0062D468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -145,6 +148,17 @@
 			name = Generated;
 			sourceTree = "<group>";
 		};
+		252DD41D1BE5ADA300EAD507 /* Pinder */ = {
+			isa = PBXGroup;
+			children = (
+				256CFFE31BE4AEBD0062D468 /* PinderViewController.h */,
+				256CFFE41BE4AEBD0062D468 /* PinderViewController.m */,
+				252DD41A1BE5AC4B00EAD507 /* PinderCell.h */,
+				252DD41B1BE5AC4B00EAD507 /* PinderCell.m */,
+			);
+			name = Pinder;
+			sourceTree = "<group>";
+		};
 		256C00061BE50DDA0062D468 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,8 +197,7 @@
 				256C00061BE50DDA0062D468 /* Model */,
 				256CFFE01BE4AEBD0062D468 /* AppDelegate.h */,
 				256CFFE11BE4AEBD0062D468 /* AppDelegate.m */,
-				256CFFE31BE4AEBD0062D468 /* ViewController.h */,
-				256CFFE41BE4AEBD0062D468 /* ViewController.m */,
+				252DD41D1BE5ADA300EAD507 /* Pinder */,
 				25BBFDBA1BE53A0B00D42E90 /* Settings */,
 				256CFFFF1BE4FD650062D468 /* LoginViewController.h */,
 				256C00001BE4FD650062D468 /* LoginViewController.m */,
@@ -426,7 +439,7 @@
 				25BBFDC61BE5408200D42E90 /* ABMultiValuePickerController.m in Sources */,
 				25BBFDD41BE5533100D42E90 /* Filter+CoreDataProperties.m in Sources */,
 				256CFFFE1BE4F5A00062D468 /* PinderServer.m in Sources */,
-				256CFFE51BE4AEBD0062D468 /* ViewController.m in Sources */,
+				256CFFE51BE4AEBD0062D468 /* PinderViewController.m in Sources */,
 				25BBFDE41BE56A7A00D42E90 /* Country+CoreDataProperties.m in Sources */,
 				256C00011BE4FD650062D468 /* LoginViewController.m in Sources */,
 				252DD4161BE57D9900EAD507 /* University.m in Sources */,
@@ -442,6 +455,7 @@
 				256C00151BE5237B0062D468 /* SettingsViewController.m in Sources */,
 				25BBFDD81BE55A9200D42E90 /* NSString+StringWithCapitalizedFirstCharOnly.m in Sources */,
 				25BBFDCF1BE54ABB00D42E90 /* ABMultiValuePickerTableController.m in Sources */,
+				252DD41C1BE5AC4B00EAD507 /* PinderCell.m in Sources */,
 				256CFFE21BE4AEBD0062D468 /* AppDelegate.m in Sources */,
 				256CFFDF1BE4AEBD0062D468 /* main.m in Sources */,
 				25BBFDC01BE53B1200D42E90 /* SecondSettingsViewController.m in Sources */,

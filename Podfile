@@ -11,7 +11,8 @@ pod 'Crashlytics'
 
 # For Model
 pod 'MagicalRecord'
-pod 'FastEasyMapping'
+pod 'FastEasyMapping', :path => './FastEasyMapping', :bracnh => '1.0'
+pod 'SDWebImage'
 
 # For UI
 pod 'Masonry'
@@ -19,5 +20,6 @@ pod 'SVProgressHUD'
 pod 'UIView-IBDesignable'
 pod 'MSRangeSlider'
 pod 'ABIntentions'
+pod 'LiveFrost'
 
 end
