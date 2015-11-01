@@ -169,6 +169,23 @@
       }] resume];
 }
 
+- (void)like:(NSInteger)user_id filter:(NSInteger)filter_id completion:(void(^)(NSArray *users))completion
+{
+    [self loadUrl:[NSString stringWithFormat:@"http://vk-hackathon.tk/api/user/like?id=%@&filter_id=%@&hash=%@",@(user_id),@(filter_id),self.server_token] completion:^(id result)
+    {
+        if (completion)
+            completion(result[@"feed"]);
+    }];
+}
+
+- (void)dislike:(NSInteger)user_id filter:(NSInteger)filter_id completion:(void(^)(NSArray *users))completion
+{
+    [self loadUrl:[NSString stringWithFormat:@"http://vk-hackathon.tk/api/user/dislike?id=%@&filter_id=%@&hash=%@",@(user_id),@(filter_id),self.server_token] completion:^(id result) {
+        if (completion)
+            completion(result[@"feed"]);
+    }];
+}
+
 #pragma mark - Web View Delegate
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

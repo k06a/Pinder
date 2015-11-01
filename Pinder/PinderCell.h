@@ -9,15 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <LiveFrost/LiveFrost.h>
 #import "User.h"
+#import "ABPinderView.h"
 
 @interface PinderCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UIView *mainView;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarView;
 @property (nonatomic, weak) IBOutlet LFGlassView *blurView;
 @property (nonatomic, weak) IBOutlet UIImageView *likeSplash;
 @property (nonatomic, weak) IBOutlet UIImageView *skipSplash;
 
 @property (nonatomic, strong) User *user;
+@property (nonatomic, assign) CGFloat progress;
 
 @end

@@ -38,4 +38,7 @@
 
 - (void)updateFilter:(id)filter completion:(void(^)(NSArray *users, NSDictionary *filter))completion;
 
+- (void)like:(NSInteger)user_id filter:(NSInteger)filter_id completion:(void(^)(NSArray *users))completion;
+- (void)dislike:(NSInteger)user_id filter:(NSInteger)filter_id completion:(void(^)(NSArray *users))completion;
+
 @end

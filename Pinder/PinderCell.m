@@ -20,29 +20,35 @@
     //self.layer.cornerRadius = 6;
     //self.layer.masksToBounds = YES;
     
-    self.mainView.layer.rasterizationScale = [UIScreen mainScreen].scale;
-    self.mainView.layer.shouldRasterize = YES;
-    self.mainView.layer.masksToBounds = YES;
-    self.mainView.layer.cornerRadius = 6;
-    self.mainView.layer.borderWidth = 1.0;
-    self.mainView.layer.borderColor = [UIColor colorWithWhite:204/255. alpha:1.0].CGColor;
+    //self.mainView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    //self.mainView.layer.shouldRasterize = YES;
+    //self.mainView.layer.masksToBounds = YES;
+    //self.mainView.layer.cornerRadius = 6;
+    //self.mainView.layer.borderWidth = 1.0;
+    //self.mainView.layer.borderColor = [UIColor colorWithWhite:204/255. alpha:1.0].CGColor;
     
-    self.backgroundColor = [UIColor clearColor];
-    self.layer.rasterizationScale = [UIScreen mainScreen].scale;
-    self.layer.shouldRasterize = YES;
+    //self.backgroundColor = [UIColor clearColor];
+    //self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    //self.layer.shouldRasterize = YES;
     //self.avatarView.backgroundColor = [UIColor colorWithRed:(rand()%255)/255. green:(rand()%255)/255. blue:(rand()%255)/255. alpha:1.0];
     
-    self.clipsToBounds = NO;
-    self.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.layer.shadowRadius = 4;
-    self.layer.shadowOpacity = 0.25;
-    self.layer.shadowOffset = CGSizeMake(0,1);
+    //self.clipsToBounds = NO;
+    //self.layer.shadowColor = [UIColor blackColor].CGColor;
+    //self.layer.shadowRadius = 4;
+    //self.layer.shadowOpacity = 0.25;
+    //self.layer.shadowOffset = CGSizeMake(0,1);
 }
 
 - (void)setUser:(User *)user
 {
     _user = user;
+    self.avatarView.image = nil;
     [self.avatarView sd_setImageWithURL:[NSURL URLWithString:user.photo_max_orig]];
+    
+    if (user.age.length)
+        self.nameLabel.text = [NSString stringWithFormat:@"%@, %@", user.first_name, user.age];
+    if ([user.bdate componentsSeparatedByString:@"."].count == 3)
+        self.nameLabel.text = user.first_name;
 }
 
 @end

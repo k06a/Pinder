@@ -67,6 +67,7 @@
              @"age_from":self.age_from,
              @"age_to":self.age_to,
              @"online":self.online,
+             @"in_friends":self.in_friends ?: @0,
              };
 }
 

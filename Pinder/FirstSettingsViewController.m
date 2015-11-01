@@ -162,6 +162,13 @@
     {
         [self presentChoiseControllerForItem:item completion:^{
             [self setupCell:cell forIndexPath:indexPath];
+            if (indexPath.row == 2) {
+                self.filter.city_index = @-1;
+                self.filter.university_index = @-1;
+            }
+            if (indexPath.row == 3) {
+                self.filter.university_index = @-1;
+            }
             self.items = nil;
         }];
     }

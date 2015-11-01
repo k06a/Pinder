@@ -62,6 +62,9 @@
                                                 </constraints>
                                                 <state key="normal" image="vk_buttom"/>
                                                 <state key="highlighted" image="vk_buttom_hover"/>
+                                                <connections>
+                                                    <segue destination="PsQ-om-iJP" kind="push" id="SIe-5I-Pba"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmY-oF-NMO">
                                                 <rect key="frame" x="0.0" y="28" width="77" height="77"/>
@@ -117,33 +120,52 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="290" height="324"/>
                                                             <animations/>
                                                         </imageView>
-                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGE-Fm-ojM" customClass="LFGlassView">
+                                                        <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGE-Fm-ojM" customClass="LFGlassView">
                                                             <rect key="frame" x="0.0" y="0.0" width="290" height="324"/>
                                                             <animations/>
                                                         </view>
-                                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_buttom_cart" translatesAutoresizingMaskIntoConstraints="NO" id="1z7-cU-nD1">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like_buttom_cart" translatesAutoresizingMaskIntoConstraints="NO" id="1z7-cU-nD1">
                                                             <rect key="frame" x="97" y="114" width="96" height="96"/>
                                                             <animations/>
                                                         </imageView>
-                                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skip_buttom_cart" translatesAutoresizingMaskIntoConstraints="NO" id="rwM-Cz-HyO">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skip_buttom_cart" translatesAutoresizingMaskIntoConstraints="NO" id="rwM-Cz-HyO">
                                                             <rect key="frame" x="97" y="114" width="96" height="96"/>
                                                             <animations/>
                                                         </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grad" translatesAutoresizingMaskIntoConstraints="NO" id="KCR-Sj-3xY">
+                                                            <rect key="frame" x="0.0" y="264" width="290" height="60"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="zXO-rR-ycg"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anabel, 25 years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glC-LG-xpr">
+                                                            <rect key="frame" x="20" y="282" width="150.5" height="24"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.60392156860000001" green="0.65490196079999996" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="KCR-Sj-3xY" secondAttribute="bottom" id="01A-fo-l8e"/>
                                                         <constraint firstAttribute="trailing" secondItem="SMI-li-YiE" secondAttribute="trailing" id="5bp-nN-sqW"/>
+                                                        <constraint firstItem="KCR-Sj-3xY" firstAttribute="leading" secondItem="sZ7-Tp-FCc" secondAttribute="leading" id="9FE-7m-LaX"/>
                                                         <constraint firstItem="SMI-li-YiE" firstAttribute="leading" secondItem="sZ7-Tp-FCc" secondAttribute="leading" id="Guf-LR-hNf"/>
                                                         <constraint firstItem="rwM-Cz-HyO" firstAttribute="centerX" secondItem="sZ7-Tp-FCc" secondAttribute="centerX" id="Jn0-Z6-FSb"/>
+                                                        <constraint firstItem="glC-LG-xpr" firstAttribute="leading" secondItem="sZ7-Tp-FCc" secondAttribute="leading" constant="20" id="OCf-0M-n98"/>
                                                         <constraint firstAttribute="bottom" secondItem="oGE-Fm-ojM" secondAttribute="bottom" id="TI4-ex-xUh"/>
                                                         <constraint firstItem="SMI-li-YiE" firstAttribute="top" secondItem="sZ7-Tp-FCc" secondAttribute="top" id="TIC-pP-QR7"/>
                                                         <constraint firstAttribute="trailing" secondItem="oGE-Fm-ojM" secondAttribute="trailing" id="ThN-OJ-khO"/>
                                                         <constraint firstItem="1z7-cU-nD1" firstAttribute="centerY" secondItem="sZ7-Tp-FCc" secondAttribute="centerY" id="YFX-kD-Qe0"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KCR-Sj-3xY" secondAttribute="trailing" id="d8b-LW-0Z5"/>
                                                         <constraint firstItem="1z7-cU-nD1" firstAttribute="centerX" secondItem="sZ7-Tp-FCc" secondAttribute="centerX" id="enR-hq-ypa"/>
                                                         <constraint firstItem="rwM-Cz-HyO" firstAttribute="centerY" secondItem="sZ7-Tp-FCc" secondAttribute="centerY" id="rH1-pS-fce"/>
                                                         <constraint firstAttribute="bottom" secondItem="SMI-li-YiE" secondAttribute="bottom" id="ra6-eZ-6q8"/>
                                                         <constraint firstItem="oGE-Fm-ojM" firstAttribute="leading" secondItem="sZ7-Tp-FCc" secondAttribute="leading" id="rfk-WM-GhJ"/>
+                                                        <constraint firstItem="glC-LG-xpr" firstAttribute="centerY" secondItem="KCR-Sj-3xY" secondAttribute="centerY" id="wYE-Am-nJO"/>
                                                         <constraint firstItem="oGE-Fm-ojM" firstAttribute="top" secondItem="sZ7-Tp-FCc" secondAttribute="top" id="ydf-KI-qxI"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -163,6 +185,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                             <real key="value" value="0.089999999999999997"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -182,6 +205,7 @@
                                             <outlet property="blurView" destination="oGE-Fm-ojM" id="dM2-KX-WUz"/>
                                             <outlet property="likeSplash" destination="1z7-cU-nD1" id="4sK-Ft-Xn6"/>
                                             <outlet property="mainView" destination="sZ7-Tp-FCc" id="gm0-D8-BkC"/>
+                                            <outlet property="nameLabel" destination="glC-LG-xpr" id="6Z2-qF-v7b"/>
                                             <outlet property="skipSplash" destination="rwM-Cz-HyO" id="r9N-ZQ-K5u"/>
                                         </connections>
                                     </tableViewCell>
@@ -205,11 +229,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="yoA-om-oau">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="icon_setting" id="IqS-WY-hPP">
-                            <connections>
-                                <segue destination="PsQ-om-iJP" kind="push" id="Ijz-lN-uch"/>
-                            </connections>
-                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="wax-UD-0ql">
                             <rect key="frame" x="96" y="5.5" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,7 +249,6 @@
                                 <constraint firstItem="IBL-mY-O4A" firstAttribute="leading" secondItem="wax-UD-0ql" secondAttribute="leading" id="sQp-ML-Y0w"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" image="icon_heart" id="wRP-kH-YMS"/>
                     </navigationItem>
                     <connections>
                         <outlet property="pinderView" destination="amq-X1-ALV" id="qID-K5-qpF"/>
@@ -792,6 +810,9 @@
                                                     <rect key="frame" x="256" y="6" width="51" height="31"/>
                                                     <animations/>
                                                     <color key="onTintColor" red="0.60392156860000001" green="0.65490196079999996" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="mutualFriendsSwitchChanged:" destination="82G-ef-fn0" eventType="valueChanged" id="G6V-TC-FKi"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <animations/>
@@ -956,6 +977,9 @@
                             <outlet property="delegate" destination="82G-ef-fn0" id="Svi-Uo-Sg9"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="mutualFriendsSwitch" destination="30o-nz-eWo" id="Uoa-Y9-5Wt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9w-Ej-oV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1279,8 +1303,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_heart" width="22" height="20"/>
-        <image name="icon_setting" width="24" height="24"/>
+        <image name="grad" width="50" height="60"/>
         <image name="like_buttom" width="105" height="105"/>
         <image name="like_buttom_cart" width="96" height="96"/>
         <image name="like_buttom_hover" width="105" height="105"/>

@@ -25,6 +25,7 @@
 
 - (void)showError:(NSError *)error
 {
+    NSLog(@"Error: %@", error);
     [SVProgressHUD showErrorWithStatus:error.localizedDescription];
 }
 
@@ -87,7 +88,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [MagicalRecord saveWithBlockAndWait:nil];
+    [MagicalRecord cleanUp];
 }
 
 @end

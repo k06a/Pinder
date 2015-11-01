@@ -16,7 +16,7 @@
 + (FEMMapping *)mapping
 {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:@"User"];
-    [mapping addAttributesFromArray:@[@"user_id", @"in_app", @"access_token", @"identifier", @"first_name", @"last_name", @"sex", @"bdate", @"city_id", @"photo_50", @"photo_100", @"photo_200_orig", @"photo_200", @"photo_max_orig", @"domain", @"about"]];
+    [mapping addAttributesFromArray:@[@"user_id", @"in_app", @"access_token", @"identifier", @"first_name", @"last_name", @"sex", @"bdate", @"city_id", @"photo_50", @"photo_100", @"photo_200_orig", @"photo_200", @"photo_max_orig", @"domain", @"about", @"age"]];
     [mapping addAttributesFromDictionary:@{@"identifier": @"id"}];
     mapping.primaryKey = @"identifier";
     

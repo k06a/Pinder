@@ -18,8 +18,6 @@
 
 @property (nonatomic, strong) NSMutableArray *exceptViews;
 
-@property (nonatomic, assign) NSInteger globalIndex;
-
 @end
 
 @implementation ABPinderView
@@ -84,11 +82,11 @@
 
 - (void)setCount:(NSInteger)count
 {
-    for (NSInteger i = _count; i < MIN(count,[self.tinderDelegate numberOfItemsInPinderView:self]); i++)
+    for (NSInteger i = _count; i < count; i++)
     {
         UIView *view = [self cloneSelfView:YES];
         if ([self.tinderDelegate respondsToSelector:@selector(pinderView:willDisplayItem:atIndex:)])
-            [self.tinderDelegate pinderView:self willDisplayItem:(id)view atIndex:i];
+            [self.tinderDelegate pinderView:self willDisplayItem:(id)view atIndex:self.globalIndex+i];
         [self.views addObject:view];
     }
     for (NSInteger i = _count; i >= count; i--) {
@@ -258,6 +256,13 @@
             [self.tinderDelegate pinderView:self didHideTopItem:self.reusableView];
     }];
     
+    if (offset < 0) {
+        if ([self.tinderDelegate respondsToSelector:@selector(pinderView:movedToLeft:)])
+            [self.tinderDelegate pinderView:self movedToLeft:self.globalIndex-self.views.count-1];
+    } else {
+        if ([self.tinderDelegate respondsToSelector:@selector(pinderView:movedToRight:)])
+            [self.tinderDelegate pinderView:self movedToRight:self.globalIndex-self.views.count-1];
+    }
     self.globalIndex++;
 }
 
@@ -323,7 +328,10 @@
 
 - (void)reloadData
 {
-    self.count = self.count;
+    [self layoutIfNeeded];
+    for (NSInteger i = 0; i < self.views.count; i++) {
+        [self.tinderDelegate pinderView:self willDisplayItem:self.views[i] atIndex:i];
+    }
 }
 
 @end

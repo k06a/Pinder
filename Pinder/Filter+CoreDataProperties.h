@@ -15,16 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Filter (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *country_index;
-@property (nullable, nonatomic, retain) NSNumber *sex_m;
-@property (nullable, nonatomic, retain) NSNumber *sex_w;
-@property (nullable, nonatomic, retain) NSNumber *city_index;
-@property (nullable, nonatomic, retain) NSNumber *university_index;
-@property (nullable, nonatomic, retain) NSNumber *relationships_index;
-@property (nullable, nonatomic, retain) NSNumber *filter_id;
 @property (nullable, nonatomic, retain) NSNumber *age_from;
 @property (nullable, nonatomic, retain) NSNumber *age_to;
+@property (nullable, nonatomic, retain) NSNumber *city_index;
+@property (nullable, nonatomic, retain) NSNumber *country_index;
+@property (nullable, nonatomic, retain) NSNumber *filter_id;
 @property (nullable, nonatomic, retain) NSNumber *online;
+@property (nullable, nonatomic, retain) NSNumber *relationships_index;
+@property (nullable, nonatomic, retain) NSNumber *sex_m;
+@property (nullable, nonatomic, retain) NSNumber *sex_w;
+@property (nullable, nonatomic, retain) NSNumber *university_index;
+@property (nullable, nonatomic, retain) NSNumber *in_friends;
 
 @end
 

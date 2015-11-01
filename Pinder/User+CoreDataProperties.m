@@ -30,6 +30,7 @@
 @dynamic sex;
 @dynamic sort_id;
 @dynamic user_id;
+@dynamic age;
 @dynamic city;
 @dynamic country;
 @dynamic university;

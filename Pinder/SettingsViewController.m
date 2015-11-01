@@ -44,6 +44,9 @@
         id filter = @{@"filter":[[Filter sharedFilter] jsonObject]};
         [[PinderServer sharedServer] updateFilter:filter completion:^(NSArray *arrUsers, NSDictionary *filter)
         {
+            if (arrUsers == nil)
+                return;
+
             [Filter sharedFilter].filter_id = filter[@"id"];
             NSInteger nextSortId = [User nextSortId];
             NSArray<User *> *users = [FEMDeserializer collectionFromRepresentation:arrUsers mapping:[User mapping] context:[NSManagedObjectContext MR_defaultContext]];

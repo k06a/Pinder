@@ -39,6 +39,8 @@ IB_DESIGNABLE
 @property (nonatomic, readonly) UIView *topView;
 @property (nonatomic, readonly) UIView *clonedTopView;
 
+@property (nonatomic, assign) NSInteger globalIndex;
+
 - (void)animateSwipeLeft;
 - (void)animateSwipeRight;
 
