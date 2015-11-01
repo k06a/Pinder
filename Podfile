@@ -11,7 +11,7 @@ pod 'Crashlytics'
 
 # For Model
 pod 'MagicalRecord'
-pod 'FastEasyMapping', :path => './FastEasyMapping', :bracnh => '1.0'
+pod 'FastEasyMapping', :path => './FastEasyMapping', :branch => 'develop'
 pod 'SDWebImage'
 
 # For UI

@@ -42,8 +42,9 @@
     
     if (self.isMovingFromParentViewController) {
         id filter = @{@"filter":[[Filter sharedFilter] jsonObject]};
-        [[PinderServer sharedServer] updateFilter:filter completion:^(NSArray *arrUsers)
+        [[PinderServer sharedServer] updateFilter:filter completion:^(NSArray *arrUsers, NSDictionary *filter)
         {
+            [Filter sharedFilter].filter_id = filter[@"id"];
             NSInteger nextSortId = [User nextSortId];
             NSArray<User *> *users = [FEMDeserializer collectionFromRepresentation:arrUsers mapping:[User mapping] context:[NSManagedObjectContext MR_defaultContext]];
             for (NSInteger i = 0; i < users.count; i++)

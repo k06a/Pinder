@@ -6,6 +6,7 @@
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
+#import "NSString+StringWithCapitalizedFirstCharOnly.h"
 #import "ABMultiValuePickerTableController.h"
 
 @interface ABMultiValuePickerTableController ()
@@ -53,7 +54,8 @@
 - (void)setupCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
 {
     cell.tintColor = [UIColor grayColor];
-    cell.textLabel.text = [self.items[indexPath.row] capitalizedString];
+    id text = (self.items[indexPath.row] == (id)[NSNull null]) ? @"" : self.items[indexPath.row];
+    cell.textLabel.text = [text stringWithCapitalizedFirstCharOnly];
     cell.accessoryType = [self.selectedItems containsObject:self.items[indexPath.row]] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
 

@@ -20,7 +20,7 @@ PODS:
   - Fabric (1.5.5):
     - Fabric/Base (= 1.5.5)
   - Fabric/Base (1.5.5)
-  - FastEasyMapping (0.4.0)
+  - FastEasyMapping (1.0.1)
   - LiveFrost (1.1.2)
   - MagicalRecord (2.3.0)
   - Masonry (0.6.3)
@@ -46,14 +46,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   FastEasyMapping:
-    :bracnh: '1.0'
+    :branch: develop
     :path: "./FastEasyMapping"
 
 SPEC CHECKSUMS:
   ABIntentions: 3f2aaba80b522ca8357c30ad15552d6f24422fb9
   Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
   Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
-  FastEasyMapping: 675844e2f107e52c9f5193230f0e496b7f70a43f
+  FastEasyMapping: 73161a5669aa26310bac1e86e706ead6d643a8ef
   LiveFrost: 0631143a00e336ad6a8f183d4b02df93f8900d9d
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f

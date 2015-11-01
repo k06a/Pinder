@@ -48,23 +48,6 @@
     
     [SVProgressHUD setDefaultMaskType:(SVProgressHUDMaskTypeGradient)];
     
-    // Prepare none country, city, university
-    if (![Country MR_findFirstByAttribute:@"country_id" withValue:@0]) {
-        Country *noneCountry = [Country MR_createEntity];
-        noneCountry.country_id = @0;
-        noneCountry.title = @"";
-    }
-    if (![City MR_findFirstByAttribute:@"city_id" withValue:@0]) {
-        City *noneCity = [City MR_createEntity];
-        noneCity.city_id = @0;
-        noneCity.title = @"";
-    }
-    if (![University MR_findFirstByAttribute:@"university_id" withValue:@0]) {
-        University *noneUniversity = [University MR_createEntity];
-        noneUniversity.university_id = @0;
-        noneUniversity.title = @"";
-    }
-    
     [[PinderServer sharedServer] loadCountries:^(NSArray *arrCountries) {
         NSArray *countries = [FEMDeserializer collectionFromRepresentation:arrCountries mapping:[Country mapping] context:[NSManagedObjectContext MR_defaultContext]];
         NSLog(@"%@ countries loaded", @(countries.count));

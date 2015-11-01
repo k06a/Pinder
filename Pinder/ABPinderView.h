@@ -45,4 +45,6 @@ IB_DESIGNABLE
 - (void)animateSwipeBackFromLeft;
 - (void)animateSwipeBackFromRight;
 
+- (void)reloadData;
+
 @end

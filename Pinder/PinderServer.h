@@ -36,6 +36,6 @@
 - (void)loadCities:(void(^)(NSArray *cities))completion;
 - (void)loadUniversities:(void(^)(NSArray *unis))completion;
 
-- (void)updateFilter:(id)filter completion:(void(^)(NSArray *users))completion;
+- (void)updateFilter:(id)filter completion:(void(^)(NSArray *users, NSDictionary *filter))completion;
 
 @end

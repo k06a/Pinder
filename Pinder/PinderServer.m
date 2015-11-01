@@ -135,15 +135,18 @@
     }];
 }
 
-- (void)updateFilter:(id)filter completion:(void(^)(NSArray *users))completion
+- (void)updateFilter:(id)filter completion:(void(^)(NSArray *users, NSDictionary *filter))completion
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk-hackathon.tk/api/filter?hash=%@",self.server_token]]];
     NSError *err;
+    request.HTTPMethod = @"POST";
     request.HTTPBody = [NSJSONSerialization dataWithJSONObject:filter options:0 error:&err];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
     if (err) {
         [self.delegate showError:err];
         if (completion)
-            completion(nil);
+            completion(nil,nil);
         return;
     }
     
@@ -152,7 +155,7 @@
           if (connectionError) {
               [self.delegate showError:connectionError];
               if (completion)
-                  completion(nil);
+                  completion(nil,nil);
               return;
           }
           
@@ -162,7 +165,7 @@
               [self.delegate showError:error];
           
           if (completion)
-              completion(json);
+              completion(json[@"feed"], json[@"filter"]);
       }] resume];
 }
 

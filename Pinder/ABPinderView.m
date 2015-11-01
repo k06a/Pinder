@@ -321,4 +321,9 @@
     self.globalIndex--;
 }
 
+- (void)reloadData
+{
+    self.count = self.count;
+}
+
 @end

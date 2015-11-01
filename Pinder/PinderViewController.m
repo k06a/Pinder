@@ -54,6 +54,8 @@
     {
         [self performSegueWithIdentifier:@"segue_login" sender:self];
     }
+    
+    [self.pinderView reloadData];
 }
 
 #pragma mark - Pinder View
