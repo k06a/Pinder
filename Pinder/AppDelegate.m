@@ -46,6 +46,8 @@
     [PinderServer sharedServerWithDelegate:self];
     [MagicalRecord setupCoreDataStack];
     
+    [SVProgressHUD setDefaultMaskType:(SVProgressHUDMaskTypeGradient)];
+    
     // Prepare none country, city, university
     if (![Country MR_findFirstByAttribute:@"country_id" withValue:@0]) {
         Country *noneCountry = [Country MR_createEntity];

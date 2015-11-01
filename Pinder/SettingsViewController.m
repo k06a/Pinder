@@ -6,6 +6,8 @@
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
+#import "Pinder.h"
+#import "PinderServer.h"
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
@@ -32,6 +34,22 @@
     [super viewDidLoad];
     
     [self segmentValueChanged:self.segmentControl];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if (self.isMovingFromParentViewController) {
+        id filter = @{@"filter":[[Filter sharedFilter] jsonObject]};
+        [[PinderServer sharedServer] updateFilter:filter completion:^(NSArray *arrUsers)
+        {
+            NSInteger nextSortId = [User nextSortId];
+            NSArray<User *> *users = [FEMDeserializer collectionFromRepresentation:arrUsers mapping:[User mapping] context:[NSManagedObjectContext MR_defaultContext]];
+            for (NSInteger i = 0; i < users.count; i++)
+                users[i].sort_id = @(nextSortId+i);
+        }];
+    }
 }
 
 @end

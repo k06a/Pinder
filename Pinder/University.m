@@ -2,7 +2,7 @@
 //  University.m
 //  Pinder
 //
-//  Created by Антон Буков on 01.11.15.
+//  Created by Anton Bukov on 01.11.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
@@ -27,6 +27,14 @@
     [mapping addRelationshipMapping:fakeCityMapping forProperty:@"city" keyPath:nil];
     
     return mapping;
+}
+
++ (NSArray *)allUniversitiesInCityIndex:(NSInteger)cityIndex countryIndex:(NSInteger)countryIndex
+{
+    if (cityIndex == -1 || countryIndex == -1)
+        return @[];
+    City *city = [City allCitiesInCountryIndex:countryIndex][cityIndex];
+    return [University MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"city = %@",city]];
 }
 
 @end

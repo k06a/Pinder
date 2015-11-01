@@ -2,13 +2,14 @@
 //  City.m
 //  Pinder
 //
-//  Created by Антон Буков on 01.11.15.
+//  Created by Anton Bukov on 01.11.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
 #import <MagicalRecord/MagicalRecord.h>
 #import <FastEasyMapping/FastEasyMapping.h>
 #import "PinderServer.h"
+#import "Country.h"
 #import "City.h"
 
 @implementation City
@@ -26,6 +27,13 @@
     [mapping addRelationshipMapping:fakeCountryMapping forProperty:@"country" keyPath:nil];
     
     return mapping;
+}
+
++ (NSArray *)allCitiesInCountryIndex:(NSInteger)countryIndex
+{
+    if (countryIndex == -1)
+        return @[];
+    return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"country = %@",[Country allCountries][countryIndex]]];
 }
 
 @end

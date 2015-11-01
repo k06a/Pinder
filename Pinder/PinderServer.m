@@ -135,6 +135,37 @@
     }];
 }
 
+- (void)updateFilter:(id)filter completion:(void(^)(NSArray *users))completion
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk-hackathon.tk/api/filter?hash=%@",self.server_token]]];
+    NSError *err;
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:filter options:0 error:&err];
+    if (err) {
+        [self.delegate showError:err];
+        if (completion)
+            completion(nil);
+        return;
+    }
+    
+    [[self.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable connectionError)
+      {
+          if (connectionError) {
+              [self.delegate showError:connectionError];
+              if (completion)
+                  completion(nil);
+              return;
+          }
+          
+          NSError *error;
+          id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+          if (error)
+              [self.delegate showError:error];
+          
+          if (completion)
+              completion(json);
+      }] resume];
+}
+
 #pragma mark - Web View Delegate
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

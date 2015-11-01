@@ -488,7 +488,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="xbq-Qu-udE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="xbq-Qu-udE">
                                         <rect key="frame" x="0.0" y="335" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xbq-Qu-udE" id="QRJ-Wo-Z31">
@@ -549,7 +549,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Br1-kR-beO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Br1-kR-beO">
                                         <rect key="frame" x="0.0" y="415" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Br1-kR-beO" id="bFp-1z-afW">
@@ -567,6 +567,9 @@
                                                     <rect key="frame" x="256" y="6" width="51" height="31"/>
                                                     <animations/>
                                                     <color key="onTintColor" red="0.60392156860000001" green="0.65490196079999996" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="onlineSwithcChanged:" destination="ruQ-r4-jUK" eventType="valueChanged" id="dBB-89-JU3"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <animations/>
@@ -589,6 +592,7 @@
                     </tableView>
                     <connections>
                         <outlet property="agesRangeLabel" destination="zAj-Mj-IiJ" id="QMy-5U-R96"/>
+                        <outlet property="onlineSwitch" destination="ZCw-NC-nHY" id="79K-L5-a4O"/>
                         <outlet property="rangeSlider" destination="E0e-sT-nw9" id="Qc1-fX-IDq"/>
                     </connections>
                 </tableViewController>

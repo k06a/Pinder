@@ -20,6 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *sex_w;
 @property (nullable, nonatomic, retain) NSNumber *city_index;
 @property (nullable, nonatomic, retain) NSNumber *university_index;
+@property (nullable, nonatomic, retain) NSNumber *relationships_index;
+@property (nullable, nonatomic, retain) NSNumber *filter_id;
+@property (nullable, nonatomic, retain) NSNumber *age_from;
+@property (nullable, nonatomic, retain) NSNumber *age_to;
+@property (nullable, nonatomic, retain) NSNumber *online;
 
 @end
 

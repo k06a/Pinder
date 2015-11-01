@@ -18,5 +18,10 @@
 @dynamic sex_w;
 @dynamic city_index;
 @dynamic university_index;
+@dynamic relationships_index;
+@dynamic filter_id;
+@dynamic age_from;
+@dynamic age_to;
+@dynamic online;
 
 @end

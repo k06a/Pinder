@@ -2,7 +2,7 @@
 //  City.h
 //  Pinder
 //
-//  Created by Антон Буков on 01.11.15.
+//  Created by Anton Bukov on 01.11.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface City : NSManagedObject
 
 + (FEMMapping *)mapping;
++ (NSArray *)allCitiesInCountryIndex:(NSInteger)countryIndex;
 
 @end
 

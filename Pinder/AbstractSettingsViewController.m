@@ -2,7 +2,7 @@
 //  AbstractSettingsViewController.m
 //  Pinder
 //
-//  Created by Антон Буков on 01.11.15.
+//  Created by Anton Bukov on 01.11.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
@@ -18,45 +18,28 @@
 
 @implementation AbstractSettingsViewController
 
+- (Filter *)filter
+{
+    if (_filter == nil)
+        _filter = [Filter sharedFilter];
+    return _filter;
+}
+
 - (NSArray *)countries
 {
     if (_countries == nil)
-        _countries = [Country MR_findAllSortedBy:@"title" ascending:YES];
+        _countries = [Country allCountries];
     return _countries;
 }
 
 - (NSArray *)cities
 {
-    if (self.filter.country_index.integerValue == 0 ||
-        self.filter.country_index.integerValue >= self.countries.count)
-    {
-        return @[];
-    }
-    return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"country = %@", self.countries[self.filter.country_index.integerValue]]];
+    return [City allCitiesInCountryIndex:self.filter.country_index.integerValue];
 }
 
 - (NSArray *)universities
 {
-    if (self.filter.city_index.integerValue == 0 ||
-        self.filter.city_index.integerValue >= self.cities.count)
-    {
-        return @[];
-    }
-    return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"city = %@", self.cities[self.filter.city_index.integerValue]]];
-}
-
-- (Filter *)filter
-{
-    if (_filter == nil) {
-        _filter = [Filter MR_findFirst];
-        if (_filter == nil) {
-            _filter = [Filter MR_createEntity];
-            _filter.sex_m = @([[User me].sex integerValue] == SexWoman);
-            _filter.sex_w = @([[User me].sex integerValue] == SexMan);
-            _filter.country_index = @([self.countries indexOfObject:[User me].country]);
-        }
-    }
-    return _filter;
+    return [University allUniversitiesInCityIndex:self.filter.city_index.integerValue countryIndex:self.filter.country_index.integerValue];
 }
 
 - (NSString *)descriptionForItem:(NSDictionary *)item

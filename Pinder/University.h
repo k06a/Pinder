@@ -2,7 +2,7 @@
 //  University.h
 //  Pinder
 //
-//  Created by Антон Буков on 01.11.15.
+//  Created by Anton Bukov on 01.11.15.
 //  Copyright © 2015 Happy Santa. All rights reserved.
 //
 
@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface University : NSManagedObject
 
 + (FEMMapping *)mapping;
++ (NSArray *)allUniversitiesInCityIndex:(NSInteger)cityIndex countryIndex:(NSInteger)countryIndex;
 
 @end
 

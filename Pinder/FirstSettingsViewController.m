@@ -7,6 +7,7 @@
 //
 
 #import <MSRangeSlider/MSRangeSlider.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #import "FirstSettingsViewController.h"
 
@@ -14,6 +15,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *agesRangeLabel;
 @property (nonatomic, weak) IBOutlet MSRangeSlider *rangeSlider;
+@property (nonatomic, weak) IBOutlet UISwitch *onlineSwitch;
 
 @end
 
@@ -28,13 +30,13 @@
                                  @"multiple":@YES,
                                  @"none":@NO,
                                  @"only":@YES},
-                        @"ctr":@{@"items":[self.countries valueForKey:@"title"],
+                        @"con":@{@"items":[self.countries valueForKey:@"title"],
                                  @"key":@"country_index",
                                  @"title":@"Проживают в стране",
                                  @"multiple":@NO,
                                  @"none":@YES,
                                  @"only":@NO},
-                        @"cty":@{@"items":[self.cities valueForKey:@"title"],
+                        @"cit":@{@"items":[self.cities valueForKey:@"title"],
                                  @"key":@"city_index",
                                  @"title":@"Проживают в городе",
                                  @"multiple":@NO,
@@ -73,7 +75,14 @@
 
 - (void)rangeSliderChanged:(MSRangeSlider *)rangeSlider
 {
-    self.agesRangeLabel.text = [NSString stringWithFormat:@"%@-%@", @((NSInteger)rangeSlider.fromValue+13), @((NSInteger)rangeSlider.toValue+13)];
+    self.filter.age_from = @((NSInteger)rangeSlider.fromValue+13);
+    self.filter.age_to = @((NSInteger)rangeSlider.toValue+13);
+    self.agesRangeLabel.text = [NSString stringWithFormat:@"%@-%@", self.filter.age_from, @((NSInteger)rangeSlider.toValue+13)];
+}
+
+- (IBAction)onlineSwithcChanged:(UISwitch *)onlineSwitch
+{
+    self.filter.online = @(onlineSwitch.on);
 }
 
 - (void)viewDidLoad
@@ -103,16 +112,24 @@
         cell.detailTextLabel.text = [self descriptionForItem:self.items[@"sex"]];
     }
     if (indexPath.row == 2) {
-        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"ctr"]];
+        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"con"]];
     }
     if (indexPath.row == 3) {
-        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"cty"]];
+        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"cit"]];
     }
     if (indexPath.row == 4) {
         cell.detailTextLabel.text = [self descriptionForItem:self.items[@"uni"]];
     }
     if (indexPath.row == 5) {
         cell.detailTextLabel.text = [self descriptionForItem:self.items[@"rel"]];
+    }
+    if (indexPath.row == 6) {
+        self.rangeSlider.fromValue = self.filter.age_from.integerValue-13;
+        self.rangeSlider.toValue = self.filter.age_to.integerValue-13;
+        [self rangeSliderChanged:self.rangeSlider];
+    }
+    if (indexPath.row == 7) {
+        self.onlineSwitch.on = self.filter.online.boolValue;
     }
 }
 
@@ -122,13 +139,18 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
+    if (indexPath.row == 3 && self.filter.country_index.integerValue == -1)
+        return [SVProgressHUD showErrorWithStatus:@"Сперва выберите страну"];
+    if (indexPath.row == 4 && self.filter.city_index.integerValue == -1)
+        return [SVProgressHUD showErrorWithStatus:@"Сперва выберите город"];
+    
     NSDictionary *item = ^id{
         if (indexPath.row == 1)
             return self.items[@"sex"];
         if (indexPath.row == 2)
-            return self.items[@"ctr"];
+            return self.items[@"con"];
         if (indexPath.row == 3)
-            return self.items[@"cty"];
+            return self.items[@"cit"];
         if (indexPath.row == 4)
             return self.items[@"uni"];
         if (indexPath.row == 5)
