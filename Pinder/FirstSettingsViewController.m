@@ -46,6 +46,20 @@
                                  @"multiple":@NO,
                                  @"none":@YES,
                                  @"only":@NO},
+                        @"rel":@{@"items":@[@"Не важно",
+                                            @"Не женат/Не замужем",
+                                            @"Есть друг/Есть подруга",
+                                            @"Помолвлен/Помолвлена",
+                                            @"Женат/Замужем",
+                                            @"Всё сложно",
+                                            @"В активном поиске",
+                                            @"Влюблён/Влюблена",
+                                            ],
+                                 @"key":@"relationships_index",
+                                 @"title":@"Состоит в отношениях",
+                                 @"multiple":@NO,
+                                 @"none":@NO,
+                                 @"only":@NO},
                         };
     }
     return super.items;
@@ -88,6 +102,18 @@
     if (indexPath.row == 1) {
         cell.detailTextLabel.text = [self descriptionForItem:self.items[@"sex"]];
     }
+    if (indexPath.row == 2) {
+        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"ctr"]];
+    }
+    if (indexPath.row == 3) {
+        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"cty"]];
+    }
+    if (indexPath.row == 4) {
+        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"uni"]];
+    }
+    if (indexPath.row == 5) {
+        cell.detailTextLabel.text = [self descriptionForItem:self.items[@"rel"]];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -105,6 +131,8 @@
             return self.items[@"cty"];
         if (indexPath.row == 4)
             return self.items[@"uni"];
+        if (indexPath.row == 5)
+            return self.items[@"rel"];
         return nil;
     }();
     
@@ -112,6 +140,7 @@
     {
         [self presentChoiseControllerForItem:item completion:^{
             [self setupCell:cell forIndexPath:indexPath];
+            self.items = nil;
         }];
     }
 }

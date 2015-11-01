@@ -62,7 +62,7 @@
     if (![self.selectedItems containsObject:self.items[indexPath.row]]) {
         [self.selectedItems addObject:self.items[indexPath.row]];
         [self setupCellAtIndexPath:indexPath];
-        if (!self.allowMultipleSelection) {
+        if (!self.allowMultipleSelection && self.selectedItems.count > 1) {
             NSIndexPath *ip = [NSIndexPath indexPathForRow:[self.items indexOfObject:self.selectedItem] inSection:0];
             [self.selectedItems removeObjectAtIndex:0];
             [self setupCellAtIndexPath:ip];

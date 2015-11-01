@@ -27,11 +27,21 @@
 
 - (NSArray *)cities
 {
+    if (self.filter.country_index.integerValue == 0 ||
+        self.filter.country_index.integerValue >= self.countries.count)
+    {
+        return @[];
+    }
     return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"country = %@", self.countries[self.filter.country_index.integerValue]]];
 }
 
 - (NSArray *)universities
 {
+    if (self.filter.city_index.integerValue == 0 ||
+        self.filter.city_index.integerValue >= self.cities.count)
+    {
+        return @[];
+    }
     return [City MR_findAllSortedBy:@"title" ascending:YES withPredicate:[NSPredicate predicateWithFormat:@"city = %@", self.cities[self.filter.city_index.integerValue]]];
 }
 
@@ -61,7 +71,8 @@
         }
     } else if (item[@"key"]) {
         NSInteger index = [[self.filter valueForKey:item[@"key"]] integerValue];
-        [texts addObject:item[@"items"][index]];
+        if (index != -1 && index < [item[@"items"] count])
+            [texts addObject:item[@"items"][index]];
     }
     
     if (texts.count == 0)
@@ -93,7 +104,8 @@
         }
     } else if (item[@"key"]) {
         NSInteger index = [[self.filter valueForKey:item[@"key"]] integerValue];
-        [controller.selectedItems addObject:controller.items[index]];
+        if (index != -1 && index < controller.items.count)
+            [controller.selectedItems addObject:controller.items[index]];
     }
     
     __weak typeof(controller) weakController = controller;
