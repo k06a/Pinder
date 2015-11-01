@@ -24,5 +24,17 @@
 @dynamic sex_w;
 @dynamic university_index;
 @dynamic in_friends;
+@dynamic z1;
+@dynamic z2;
+@dynamic z3;
+@dynamic z4;
+@dynamic z5;
+@dynamic z6;
+@dynamic z7;
+@dynamic z8;
+@dynamic z9;
+@dynamic z10;
+@dynamic z11;
+@dynamic z12;
 
 @end

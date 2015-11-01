@@ -67,6 +67,8 @@
         [(id)controller setItems:(id)self.items];
     if ([controller respondsToSelector:@selector(setAllowMultipleSelection:)])
         [(id)controller setAllowMultipleSelection:self.allowMultipleSelection];
+    if ([controller respondsToSelector:@selector(setAllowNoneSelection:)])
+        [(id)controller setAllowNoneSelection:self.allowNoneSelection];
     if ([controller respondsToSelector:@selector(setCompletion:)])
         [(id)controller setCompletion:self.completion];
 }

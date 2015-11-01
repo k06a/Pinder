@@ -26,6 +26,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *sex_w;
 @property (nullable, nonatomic, retain) NSNumber *university_index;
 @property (nullable, nonatomic, retain) NSNumber *in_friends;
+@property (nullable, nonatomic, retain) NSNumber *z1;
+@property (nullable, nonatomic, retain) NSNumber *z2;
+@property (nullable, nonatomic, retain) NSNumber *z3;
+@property (nullable, nonatomic, retain) NSNumber *z4;
+@property (nullable, nonatomic, retain) NSNumber *z5;
+@property (nullable, nonatomic, retain) NSNumber *z6;
+@property (nullable, nonatomic, retain) NSNumber *z7;
+@property (nullable, nonatomic, retain) NSNumber *z8;
+@property (nullable, nonatomic, retain) NSNumber *z9;
+@property (nullable, nonatomic, retain) NSNumber *z10;
+@property (nullable, nonatomic, retain) NSNumber *z11;
+@property (nullable, nonatomic, retain) NSNumber *z12;
 
 @end
 

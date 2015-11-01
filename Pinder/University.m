@@ -23,7 +23,7 @@
     
     FEMMapping *fakeCityMapping = [[FEMMapping alloc] initWithEntityName:@"City"];
     fakeCityMapping.primaryKey = @"city_id";
-    [fakeCityMapping addAttributesFromDictionary:@{@"city_id": @"id"}];
+    [fakeCityMapping addAttributesFromDictionary:@{@"city_id": @"city_id"}];
     [mapping addRelationshipMapping:fakeCityMapping forProperty:@"city" keyPath:nil];
     
     return mapping;

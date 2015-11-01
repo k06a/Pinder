@@ -74,6 +74,9 @@
             [self.selectedItems removeObject:self.items[indexPath.row]];
             [self setupCellAtIndexPath:indexPath];
         }
+    } else if (self.allowNoneSelection) {
+        [self.selectedItems removeObject:self.items[indexPath.row]];
+        [self setupCellAtIndexPath:indexPath];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
