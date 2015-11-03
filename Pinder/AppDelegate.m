@@ -50,12 +50,21 @@
     [SVProgressHUD setDefaultMaskType:(SVProgressHUDMaskTypeGradient)];
     
     [[PinderServer sharedServer] loadCountries:^(NSArray *arrCountries) {
+        if (!arrCountries)
+            return;
+        
         NSArray *countries = [FEMDeserializer collectionFromRepresentation:arrCountries mapping:[Country mapping] context:[NSManagedObjectContext MR_defaultContext]];
         NSLog(@"%@ countries loaded", @(countries.count));
         [[PinderServer sharedServer] loadCities:^(NSArray *arrCities) {
+            if (!arrCities)
+                return;
+        
             NSArray *cities = [FEMDeserializer collectionFromRepresentation:arrCities mapping:[City mapping] context:[NSManagedObjectContext MR_defaultContext]];
             NSLog(@"%@ cities loaded", @(cities.count));
             [[PinderServer sharedServer] loadUniversities:^(NSArray *arrUnis) {
+                if (!arrUnis)
+                    return;
+        
                 NSArray *unis = [FEMDeserializer collectionFromRepresentation:arrUnis mapping:[University mapping] context:[NSManagedObjectContext MR_defaultContext]];
                 NSLog(@"%@ universities loaded", @(unis.count));
             }];
